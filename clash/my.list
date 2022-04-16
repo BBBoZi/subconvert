@@ -1,0 +1,8 @@
+# msftconnecttest
+DOMAIN-SUFFIX,msftconnecttest.com
+DOMAIN-KEYWORD,msftconnecttest
+# ipv6 test
+DOMAIN-SUFFIX,test-ipv6.com
+DOMAIN-KEYWORD,test-ipv6
+DOMAIN-SUFFIX,test.ipv6.fastweb.it
+DOMAIN-SUFFIX,ipip.net
