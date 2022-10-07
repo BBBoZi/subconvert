@@ -196,6 +196,10 @@ hide-udp = false
 # Surge 现已支持 ss-libev 的全部加密方式和混淆，请参考: https://trello.com/c/BTr0vG1O/47-ss-libev-%E7%9A%84%E6%94%AF%E6%8C%81%E6%83%85%E5%86%B5
 # -----------------------------
 
+[Proxy]
+
+[Proxy Group]
+
 [Rule]
 RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Lan/Lan.list,🎯 全球直连,update-interval=86400
 RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Direct/Direct.list,🎯 全球直连,update-interval=86400
