@@ -101,11 +101,9 @@ dns:
     - 119.29.29.29
     - 114.114.114.114
   fallback:
-    - tls://1.1.1.1
-    - tls://8.8.4.4
     - https://dns.google/dns-query
     - https://cloudflare-dns.com/dns-query
-    - https://dns.rubyfish.cn/dns-query
+    - https://dns.quad9.net/dns-query
   fallback-filter:
     geoip: true
     geoip-code: CN
