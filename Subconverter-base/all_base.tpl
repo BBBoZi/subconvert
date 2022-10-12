@@ -206,9 +206,10 @@ RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatr
 RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Special/NTP-Service.list,🎯 全球直连,update-interval=86400
 RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list,🎯 全球直连,update-interval=86400
 RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/SteamCN/SteamCN.list,🎯 全球直连,update-interval=86400
-DOMAIN-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Special/Government-CN.list,🎯 全球直连
+DOMAIN-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Special/Government-CN.list,🎯 全球直连,update-interval=86400
 RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Special/TeamViewer-CIDR.list,🎯 全球直连,update-interval=86400
-RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/BBBoZi/subconvert/master/clash/mydirect.list,🎯 全球直连,update-interval=86400
+RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/BBBoZi/subconvert/master/myrules/surge/mydirect.list,🎯 全球直连,update-interval=86400
+RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Special/DNS.list,🚀 节点选择,update-interval=86400
 RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Telegram/Telegram.list,📲 电报消息,update-interval=86400
 RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/YouTube/YouTube.list,📹 油管视频,update-interval=86400
 RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Netflix/Netflix.list,🎥 奈飞视频,update-interval=86400
@@ -218,11 +219,7 @@ RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatr
 RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Apple/Apple.list,🍎 苹果服务,update-interval=86400
 RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/LM-Firefly/Rules/master/SpeedTest.list,⏱ 网络测速,update-interval=86400
 RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GlobalMedia/GlobalMedia.list,🌍 国外媒体,update-interval=86400
-RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Extra/Google/GoogleVoice.list,🇺🇲 美国节点,update-interval=86400
-RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/Region/HK.list,🇭🇰 香港节点,update-interval=86400
-RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/Region/TW.list,🇨🇳 台湾节点,update-interval=86400
-RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/Region/JP.list,🇯🇵 日本节点,update-interval=86400
-RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/StreamingMedia/Region/US.list,🇺🇲 美国节点,update-interval=86400
+RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GoogleVoice/GoogleVoice.list,🇺🇲 美国节点,update-interval=86400
 RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Global/Global.list,🚀 节点选择,update-interval=86400
 DOMAIN-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Global/Global_Domain.list,🚀 节点选择
 RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/LM-Firefly/Rules/master/CCC-Global.list,🚀 节点选择,update-interval=86400

@@ -1,0 +1,18 @@
+payload:
+  # msftconnecttest
+  - DOMAIN-SUFFIX,msftconnecttest.com
+  - DOMAIN-KEYWORD,msftconnecttest
+  # ipv6 test
+  - DOMAIN-SUFFIX,test-ipv6.com
+  - DOMAIN-KEYWORD,test-ipv6
+  - DOMAIN-SUFFIX,test.ipv6.fastweb.it
+  - DOMAIN-SUFFIX,ipip.net
+  - DOMAIN-SUFFIX,ipv6-test.com
+  - DOMAIN-KEYWORD,ipv6-test
+  - DOMAIN-SUFFIX,superjason.vip
+  - DOMAIN-SUFFIX,ntp.ubuntu.com
+  # my list
+  - DOMAIN-SUFFIX,gamekegs.com
+  - DOMAIN-SUFFIX,dogfight360.com
+  - DOMAIN-SUFFIX,macwk.com
+  - DOMAIN-SUFFIX,91tvg.com
