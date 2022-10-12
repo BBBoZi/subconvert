@@ -1,0 +1,675 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+tproxy-port: 7893
+mixed-port: 7894
+allow-lan: true
+mode: Rule
+log-level: info
+ipv6: false
+external-controller: 127.0.0.1:9091
+hosts:
+  mtalk.google.com: 108.177.125.188
+dns:
+  enable: true
+  ipv6: false
+  listen: 127.0.0.1:8853
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+    - 114.114.114.114
+    - 8.8.8.8
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.10.0.1/16
+  fake-ip-filter:
+    - "*.lan"
+    - stun.*.*.*
+    - stun.*.*
+    - time.windows.com
+    - time.nist.gov
+    - time.apple.com
+    - time.asia.apple.com
+    - "*.ntp.org.cn"
+    - "*.openwrt.pool.ntp.org"
+    - time1.cloud.tencent.com
+    - time.ustc.edu.cn
+    - pool.ntp.org
+    - ntp.ubuntu.com
+    - ntp.aliyun.com
+    - ntp1.aliyun.com
+    - ntp2.aliyun.com
+    - ntp3.aliyun.com
+    - ntp4.aliyun.com
+    - ntp5.aliyun.com
+    - ntp6.aliyun.com
+    - ntp7.aliyun.com
+    - time1.aliyun.com
+    - time2.aliyun.com
+    - time3.aliyun.com
+    - time4.aliyun.com
+    - time5.aliyun.com
+    - time6.aliyun.com
+    - time7.aliyun.com
+    - "*.time.edu.cn"
+    - time1.apple.com
+    - time2.apple.com
+    - time3.apple.com
+    - time4.apple.com
+    - time5.apple.com
+    - time6.apple.com
+    - time7.apple.com
+    - time1.google.com
+    - time2.google.com
+    - time3.google.com
+    - time4.google.com
+    - music.163.com
+    - "*.music.163.com"
+    - "*.126.net"
+    - musicapi.taihe.com
+    - music.taihe.com
+    - songsearch.kugou.com
+    - trackercdn.kugou.com
+    - "*.kuwo.cn"
+    - api-jooxtt.sanook.com
+    - api.joox.com
+    - joox.com
+    - y.qq.com
+    - "*.y.qq.com"
+    - streamoc.music.tc.qq.com
+    - mobileoc.music.tc.qq.com
+    - isure.stream.qqmusic.qq.com
+    - dl.stream.qqmusic.qq.com
+    - aqqmusic.tc.qq.com
+    - amobile.music.tc.qq.com
+    - "*.xiami.com"
+    - "*.music.migu.cn"
+    - music.migu.cn
+    - "*.msftconnecttest.com"
+    - "*.msftncsi.com"
+    - localhost.ptlogin2.qq.com
+    - "*.*.*.srv.nintendo.net"
+    - "*.*.stun.playstation.net"
+    - xbox.*.*.microsoft.com
+    - "*.ipv6.microsoft.com"
+    - "*.*.xboxlive.com"
+  nameserver:
+    - 61.139.2.69
+    - 218.6.200.139
+    - 223.5.5.5
+    - 119.29.29.29
+    - 114.114.114.114
+  fallback:
+    - tls://1.1.1.1
+    - tls://8.8.4.4
+    - https://dns.google/dns-query
+    - https://cloudflare-dns.com/dns-query
+    - https://dns.rubyfish.cn/dns-query
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 0.0.0.0/8
+      - 10.0.0.0/8
+      - 100.64.0.0/10
+      - 127.0.0.0/8
+      - 169.254.0.0/16
+      - 172.16.0.0/12
+      - 192.0.0.0/24
+      - 192.0.2.0/24
+      - 192.88.99.0/24
+      - 192.168.0.0/16
+      - 198.18.0.0/15
+      - 198.51.100.0/24
+      - 203.0.113.0/24
+      - 224.0.0.0/4
+      - 240.0.0.0/4
+      - 255.255.255.255/32
+    domain:
+      - +.google.com
+      - +.facebook.com
+      - +.twitter.com
+      - +.youtube.com
+      - +.xn--ngstr-lra8j.com
+      - +.google.cn
+      - +.googleapis.cn
+      - +.googleapis.com
+      - +.gvt1.com
+      - +.github.com
+      - +.githubusercontent.com
+      - +.ipleak.net
+      - +.2ip.io
+      - +.browserleaks.com
+      - +.browserleaks.org
+      - +.whrq.net
+      - +.whoer.net
+
+proxy-providers:
+  HK:
+    type: http
+    url: ""
+    filter: "香港"
+    interval: 3600
+    path: ./profiles/proxies/HK.yaml
+    health-check:
+      enable: true
+      interval: 600
+      # lazy: true
+      url: http://www.gstatic.com/generate_204
+
+  SG:
+    type: http
+    url: ""
+    filter: "新加坡"
+    interval: 3600
+    path: ./profiles/proxies/SG.yaml
+    health-check:
+      enable: true
+      interval: 600
+      # lazy: true
+      url: http://www.gstatic.com/generate_204
+
+  US:
+    type: http
+    url: ""
+    filter: "美国"
+    interval: 3600
+    path: ./profiles/proxies/US.yaml
+    health-check:
+      enable: true
+      interval: 600
+      # lazy: true
+      url: http://www.gstatic.com/generate_204
+
+  TW:
+    type: http
+    url: ""
+    filter: "台湾"
+    interval: 3600
+    path: ./profiles/proxies/TW.yaml
+    health-check:
+      enable: true
+      interval: 600
+      # lazy: true
+      url: http://www.gstatic.com/generate_204
+
+  JP:
+    type: http
+    url: ""
+    filter: "日本"
+    interval: 3600
+    path: ./profiles/proxies/JP.yaml
+    health-check:
+      enable: true
+      interval: 600
+      # lazy: true
+      url: http://www.gstatic.com/generate_204
+
+  Others:
+    type: http
+    url: ""
+    filter: "韩国|菲律宾|土耳其|德国|英国|澳大利亚|阿根廷|巴西|波兰|墨西哥|意大利|摩尔多瓦|加拿大|乌兹别克斯坦|防失联"
+    interval: 3600
+    path: ./profiles/proxies/Others.yaml
+    health-check:
+      enable: true
+      interval: 600
+      # lazy: true
+      url: http://www.gstatic.com/generate_204
+
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - 📍 手动切换
+      - 🇭🇰 香港节点
+      - 🇸🇬 新加坡节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - DIRECT
+  - name: 📍 手动切换
+    type: select
+    use:
+      - HK
+      - SG
+      - US
+      - TW
+      - JP
+      - Others
+    
+  - name: 📲 电报消息
+    type: select
+    use:
+      - HK
+      - SG
+      - US
+      - TW
+      - JP
+      - Others
+    proxies:
+      - 🚀 节点选择
+      - 📍 手动切换
+      - 🇭🇰 香港节点
+      - 🇸🇬 新加坡节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - DIRECT
+  - name: 📹 油管视频
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 📍 手动切换
+      - 🇭🇰 香港节点
+      - 🇸🇬 新加坡节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - DIRECT
+  - name: 🎥 奈飞视频
+    type: select
+    use:
+      - HK
+      - SG
+      - US
+      - TW
+      - JP
+      - Others
+    proxies:
+      - 🚀 节点选择
+      - 📍 手动切换
+      - 🇭🇰 香港节点
+      - 🇸🇬 新加坡节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - DIRECT
+  - name: 📺 迪士尼视频
+    type: select
+    use:
+      - HK
+      - SG
+      - US
+      - TW
+      - JP
+      - Others
+    proxies:
+      - 🚀 节点选择
+      - 📍 手动切换
+      - 🇭🇰 香港节点
+      - 🇸🇬 新加坡节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - DIRECT
+  - name: 🎵 抖音国际
+    type: select
+    use:
+      - HK
+      - SG
+      - US
+      - TW
+      - JP
+      - Others
+    proxies:
+      - 🚀 节点选择
+      - 📍 手动切换
+      - 🇺🇲 美国节点
+      - 🇯🇵 日本节点
+      - 🇨🇳 台湾节点
+      - 🇭🇰 香港节点
+      - 🇸🇬 新加坡节点
+      - DIRECT
+  - name: 🌍 国外媒体
+    type: select
+    use:
+      - HK
+      - SG
+      - US
+      - TW
+      - JP
+      - Others
+    proxies:
+      - 🚀 节点选择
+      - 📍 手动切换
+      - 🇭🇰 香港节点
+      - 🇸🇬 新加坡节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+      - DIRECT
+  - name: 🎮 游戏服务
+    type: select
+    use:
+      - HK
+      - SG
+      - US
+      - TW
+      - JP
+      - Others
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 📍 手动切换
+      - 🇭🇰 香港节点
+      - 🇸🇬 新加坡节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+  - name: 🍎 苹果服务
+    type: select
+    use:
+      - HK
+      - SG
+      - US
+      - TW
+      - JP
+      - Others
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 📍 手动切换
+      - 🇭🇰 香港节点
+      - 🇸🇬 新加坡节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+  - name: ⏱ 网络测速
+    type: select
+    use:
+      - HK
+      - SG
+      - US
+      - TW
+      - JP
+      - Others
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 📍 手动切换
+      - 🇭🇰 香港节点
+      - 🇸🇬 新加坡节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 📍 手动切换
+  - name: 🐟 漏网之鱼
+    type: select
+    use:
+      - HK
+      - SG
+      - US
+      - TW
+      - JP
+      - Others
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 📍 手动切换
+      - 🇭🇰 香港节点
+      - 🇸🇬 新加坡节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇨🇳 台湾节点
+  - name: 🇭🇰 香港节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 5
+    use:
+      - HK
+  - name: 🇯🇵 日本节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 15
+    use:
+      - JP
+  - name: 🇺🇲 美国节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 15
+    use:
+      - US
+  - name: 🇨🇳 台湾节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 15
+    use:
+      - TW
+  - name: 🇸🇬 新加坡节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 15
+    use:
+      - SG
+
+rule-providers:
+  Lan:
+    type: http
+    behavior: classical
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml"
+    path: ./profiles/ruleset/Lan.yaml
+    interval: 86400
+
+  Direct:
+    type: http
+    behavior: classical
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.yaml"
+    path: ./profiles/ruleset/Direct.yaml
+    interval: 86400
+
+  NTP-Service:
+    type: http
+    behavior: classical
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/Special/NTP-Service.yaml"
+    path: ./profiles/ruleset/NTP-Service.yaml
+    interval: 86400
+
+  SteamCN:
+    type: http
+    behavior: classical
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SteamCN/SteamCN.yaml"
+    path: ./profiles/ruleset/SteamCN.yaml
+    interval: 86400
+
+  Government-CN:
+    type: http
+    behavior: classical
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/Special/Government-CN.yaml"
+    path: ./profiles/ruleset/Government-CN.yaml
+    interval: 86400
+
+  TeamViewer-CIDR:
+    type: http
+    behavior: classical
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/Special/TeamViewer-CIDR.yaml"
+    path: ./profiles/ruleset/TeamViewer-CIDR.yaml
+    interval: 86400
+
+  mydirect:
+    type: http
+    behavior: classical
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/BBBoZi/subconvert/master/myrules/clash/mydirect.yaml"
+    path: ./profiles/ruleset/mydirect.yaml
+    interval: 86400
+
+  DNS:
+    type: http
+    behavior: classical
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/Special/DNS.yaml"
+    path: ./profiles/ruleset/DNS.yaml
+    interval: 86400
+
+  Telegram:
+    type: http
+    behavior: classical
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml"
+    path: ./profiles/ruleset/Telegram.yaml
+    interval: 86400
+
+  YouTube:
+    type: http
+    behavior: classical
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml"
+    path: ./profiles/ruleset/YouTube.yaml
+    interval: 86400
+
+  Netflix:
+    type: http
+    behavior: classical
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml"
+    path: ./profiles/ruleset/Netflix.yaml
+    interval: 86400
+
+  Disney:
+    type: http
+    behavior: classical
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml"
+    path: ./profiles/ruleset/Disney.yaml
+    interval: 86400
+
+  TikTok:
+    type: http
+    behavior: classical
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml"
+    path: ./profiles/ruleset/TikTok.yaml
+    interval: 86400
+
+  Steam:
+    type: http
+    behavior: classical
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml"
+    path: ./profiles/ruleset/Steam.yaml
+    interval: 86400
+
+  Apple:
+    type: http
+    behavior: classical
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml"
+    path: ./profiles/ruleset/Apple.yaml
+    interval: 86400
+
+  Speedtest:
+    type: http
+    behavior: classical
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/SpeedTest.yaml"
+    path: ./profiles/ruleset/Speedtest.yaml
+    interval: 86400
+
+  GoogleVoice:
+    type: http
+    behavior: classical
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleVoice/GoogleVoice.yaml"
+    path: ./profiles/ruleset/GoogleVoice.yaml
+    interval: 86400
+
+  GlobalMedia:
+    type: http
+    behavior: classical
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia.yaml"
+    path: ./profiles/ruleset/GlobalMedia.yaml
+    interval: 86400
+
+  Global_Domain:
+    type: http
+    behavior: domain
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global_Domain.yaml"
+    path: ./profiles/ruleset/Global_Domain.yaml
+    interval: 86400
+
+  Global:
+    type: http
+    behavior: classical
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global.yaml"
+    path: ./profiles/ruleset/Global.yaml
+    interval: 86400
+
+  CCC-Global:
+    type: http
+    behavior: classical
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/CCC-Global.yaml"
+    path: ./profiles/ruleset/CCC-Global.yaml
+    interval: 86400
+
+  ChinaCompanyIp:
+    type: http
+    behavior: ipcidr
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaCompanyIp.yaml"
+    path: ./profiles/ruleset/ChinaCompanyIp.yaml
+    interval: 86400
+
+  CCC-CN:
+    type: http
+    behavior: classical
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/CCC-CN.yaml"
+    path: ./profiles/ruleset/CCC-CN.yaml
+    interval: 86400
+
+  ChinaMax_IP:
+    type: http
+    behavior: ipcidr
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax_IP.yaml"
+    path: ./profiles/ruleset/ChinaMax_IP.yaml
+    interval: 86400
+
+  ChinaMax_Domain:
+    type: http
+    behavior: domain
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax_Domain.yaml"
+    path: ./profiles/ruleset/ChinaMax_Domain.yaml
+    interval: 86400
+
+  ChinaMax:
+    type: http
+    behavior: classical
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax.yaml"
+    path: ./profiles/ruleset/ChinaMax.yaml
+    interval: 86400
+
+  Download:
+    type: http
+    behavior: classical
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Download/Download.yaml"
+    path: ./profiles/ruleset/Download.yaml
+    interval: 86400
+
+rules:
+ - RULE-SET,Lan,🎯 全球直连
+ - RULE-SET,Direct,🎯 全球直连
+ - RULE-SET,NTP-Service,🎯 全球直连
+ - RULE-SET,SteamCN,🎯 全球直连
+ - RULE-SET,Government-CN,🎯 全球直连
+ - RULE-SET,TeamViewer-CIDR,🎯 全球直连
+ - RULE-SET,mydirect,🎯 全球直连
+ - RULE-SET,DNS,🚀 节点选择
+ - RULE-SET,Telegram,📲 电报消息
+ - RULE-SET,YouTube,📹 油管视频
+ - RULE-SET,Netflix,🎥 奈飞视频
+ - RULE-SET,Disney,📺 迪士尼视频
+ - RULE-SET,TikTok,🎵 抖音国际
+ - RULE-SET,Steam,🎮 游戏服务
+ - RULE-SET,Apple,🍎 苹果服务
+ - RULE-SET,Speedtest,⏱ 网络测速
+ - RULE-SET,GoogleVoice,🇺🇲 美国节点
+ - RULE-SET,GlobalMedia,🌍 国外媒体
+ - RULE-SET,Global_Domain,🚀 节点选择
+ - RULE-SET,Global,🚀 节点选择
+ - RULE-SET,CCC-Global,🚀 节点选择
+ - RULE-SET,ChinaCompanyIp,🎯 全球直连
+ - RULE-SET,CCC-CN,🎯 全球直连
+ - RULE-SET,ChinaMax_IP,🎯 全球直连
+ - RULE-SET,ChinaMax_Domain,🎯 全球直连
+ - RULE-SET,ChinaMax,🎯 全球直连
+ - RULE-SET,Download,🎯 全球直连
+ - GEOIP,CN,🎯 全球直连
+ - MATCH,🐟 漏网之鱼
+
