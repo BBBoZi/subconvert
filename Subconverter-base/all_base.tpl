@@ -215,6 +215,7 @@ RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatr
 RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/TikTok/TikTok.list,🎵 抖音国际,update-interval=86400
 RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Steam/Steam.list,🎮 游戏服务,update-interval=86400
 RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Apple/Apple.list,🍎 苹果服务,update-interval=86400
+RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GoogleVoice/GoogleVoice.list,📞 谷歌通话,update-interval=86400
 RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/LM-Firefly/Rules/master/SpeedTest.list,⏱ 网络测速,update-interval=86400
 RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GlobalMedia/GlobalMedia.list,🌍 国外媒体,update-interval=86400
 RULE-SET,https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GoogleVoice/GoogleVoice.list,🇺🇲 美国节点,update-interval=86400
