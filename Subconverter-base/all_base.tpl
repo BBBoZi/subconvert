@@ -206,6 +206,7 @@ RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/m
 RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/SteamCN/SteamCN.list,🎯 全球直连,update-interval=86400
 DOMAIN-SET,https://ghproxy.com/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Special/Government-CN.list,🎯 全球直连,update-interval=86400
 RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Special/TeamViewer-CIDR.list,🎯 全球直连,update-interval=86400
+RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/BMW/BMW.list,🎯 全球直连,update-interval=86400
 RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/BBBoZi/subconvert/master/myrules/surge/mydirect.list,🎯 全球直连,update-interval=86400
 RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Special/DNS.list,🚀 节点选择,update-interval=86400
 RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Telegram/Telegram.list,📲 电报消息,update-interval=86400
