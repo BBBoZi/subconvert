@@ -1,7 +1,10 @@
 payload:
   # msftconnecttest
+  - DOMAIN,www.msftconnecttest.com
+  - DOMAIN,ipv6.msftconnecttest.com
   - DOMAIN-SUFFIX,msftconnecttest.com
   - DOMAIN-KEYWORD,msftconnecttest
+  - DOMAIN,dns.msftncsi.com
   - DOMAIN-SUFFIX,msftncsi.com
   - DOMAIN-KEYWORD,msftncsi
   # ipv6 test
