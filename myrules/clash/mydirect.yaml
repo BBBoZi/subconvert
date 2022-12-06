@@ -2,6 +2,8 @@ payload:
   # msftconnecttest
   - DOMAIN-SUFFIX,msftconnecttest.com
   - DOMAIN-KEYWORD,msftconnecttest
+  - DOMAIN-SUFFIX,msftncsi.com
+  - DOMAIN-KEYWORD,msftncsi
   # ipv6 test
   - DOMAIN-SUFFIX,test-ipv6.com
   - DOMAIN-KEYWORD,test-ipv6
