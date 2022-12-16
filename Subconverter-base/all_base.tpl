@@ -95,16 +95,16 @@ dns:
     - "*.ipv6.microsoft.com"
     - "*.*.xboxlive.com"
     - "*.superjason.vip"
-  # nameserver:
-  #   - 61.139.2.69
-  #   - 218.6.200.139
-  #   - 223.5.5.5
-  #   - 119.29.29.29
-  #   - 114.114.114.114
-  # fallback:
-  #   - tls://8.8.4.4
-  #   - tls://1.1.1.1
-  #   - tls://9.9.9.9
+  nameserver:
+    - 61.139.2.69
+    - 218.6.200.139
+    - 223.5.5.5
+    - 119.29.29.29
+    - 114.114.114.114
+  fallback:
+    - tls://8.8.4.4
+    - tls://1.1.1.1
+    - tls://9.9.9.9
   fallback-filter:
     geoip: true
     geoip-code: CN
