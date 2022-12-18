@@ -20,7 +20,6 @@ dns:
     - 223.5.5.5
     - 119.29.29.29
     - 114.114.114.114
-    - 8.8.8.8
   enhanced-mode: fake-ip
   fake-ip-range: 198.10.0.1/16
   fake-ip-filter:
@@ -101,10 +100,10 @@ dns:
     - 223.5.5.5
     - 119.29.29.29
     - 114.114.114.114
-  fallback:
-    - tls://8.8.4.4
-    - tls://1.1.1.1
-    - tls://9.9.9.9
+  # fallback:
+  #   - tls://8.8.4.4
+  #   - tls://1.1.1.1
+  #   - tls://9.9.9.9
   fallback-filter:
     geoip: true
     geoip-code: CN
