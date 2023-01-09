@@ -13,7 +13,7 @@ external-controller: 127.0.0.1:9091
 hosts:
   'mtalk.google.com': 108.177.125.188
 dns:
-  enable: false
+  enable: true
   ipv6: false
   listen: 127.0.0.1:8853
   default-nameserver:
