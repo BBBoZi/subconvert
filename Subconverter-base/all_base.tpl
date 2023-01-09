@@ -7,7 +7,7 @@ tproxy-port: 7893
 mixed-port: 7894
 allow-lan: true
 mode: Rule
-log-level: info
+log-level: error
 ipv6: false
 external-controller: 127.0.0.1:9091
 hosts:
