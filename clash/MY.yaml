@@ -152,7 +152,7 @@ proxy-providers:
     path: ./profiles/proxies/HK.yaml
     health-check:
       enable: true
-      interval: 600
+      interval: 300
       # lazy: true
       url: http://www.gstatic.com/generate_204
 
@@ -164,7 +164,7 @@ proxy-providers:
     path: ./profiles/proxies/SG.yaml
     health-check:
       enable: true
-      interval: 600
+      interval: 300
       # lazy: true
       url: http://www.gstatic.com/generate_204
 
@@ -176,7 +176,7 @@ proxy-providers:
     path: ./profiles/proxies/US.yaml
     health-check:
       enable: true
-      interval: 600
+      interval: 300
       # lazy: true
       url: http://www.gstatic.com/generate_204
 
@@ -188,7 +188,7 @@ proxy-providers:
     path: ./profiles/proxies/TW.yaml
     health-check:
       enable: true
-      interval: 600
+      interval: 300
       # lazy: true
       url: http://www.gstatic.com/generate_204
 
@@ -200,7 +200,7 @@ proxy-providers:
     path: ./profiles/proxies/JP.yaml
     health-check:
       enable: true
-      interval: 600
+      interval: 300
       # lazy: true
       url: http://www.gstatic.com/generate_204
 
@@ -212,7 +212,7 @@ proxy-providers:
     path: ./profiles/proxies/Others.yaml
     health-check:
       enable: true
-      interval: 600
+      interval: 300
       # lazy: true
       url: http://www.gstatic.com/generate_204
 
@@ -226,6 +226,8 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇨🇳 台湾节点
+      - ⚖️ 香港负载均衡-轮询
+      - ⚖️ 香港负载均衡-散列
       - DIRECT
   - name: 📍 手动切换
     type: select
@@ -236,7 +238,6 @@ proxy-groups:
       - TW
       - JP
       - Others
-    
   - name: 📲 电报消息
     type: select
     use:
@@ -254,6 +255,8 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇨🇳 台湾节点
+      - ⚖️ 香港负载均衡-轮询
+      - ⚖️ 香港负载均衡-散列
       - DIRECT
   - name: 📹 油管视频
     type: select
@@ -265,6 +268,8 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇨🇳 台湾节点
+      - ⚖️ 香港负载均衡-轮询
+      - ⚖️ 香港负载均衡-散列
       - DIRECT
   - name: 🎥 奈飞视频
     type: select
@@ -283,6 +288,8 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇨🇳 台湾节点
+      - ⚖️ 香港负载均衡-轮询
+      - ⚖️ 香港负载均衡-散列
       - DIRECT
   - name: 📺 迪士尼视频
     type: select
@@ -301,6 +308,8 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇨🇳 台湾节点
+      - ⚖️ 香港负载均衡-轮询
+      - ⚖️ 香港负载均衡-散列
       - DIRECT
   - name: 🎵 抖音国际
     type: select
@@ -319,6 +328,8 @@ proxy-groups:
       - 🇨🇳 台湾节点
       - 🇭🇰 香港节点
       - 🇸🇬 新加坡节点
+      - ⚖️ 香港负载均衡-轮询
+      - ⚖️ 香港负载均衡-散列
       - DIRECT
   - name: 🌍 国外媒体
     type: select
@@ -337,6 +348,8 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇨🇳 台湾节点
+      - ⚖️ 香港负载均衡-轮询
+      - ⚖️ 香港负载均衡-散列
       - DIRECT
   - name: 🎮 游戏服务
     type: select
@@ -356,6 +369,8 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇨🇳 台湾节点
+      - ⚖️ 香港负载均衡-轮询
+      - ⚖️ 香港负载均衡-散列
   - name: 🍎 苹果服务
     type: select
     use:
@@ -374,6 +389,8 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇺🇲 美国节点
       - 🇨🇳 台湾节点
+      - ⚖️ 香港负载均衡-轮询
+      - ⚖️ 香港负载均衡-散列
   - name: ⏱ 网络测速
     type: select
     use:
@@ -451,6 +468,20 @@ proxy-groups:
     tolerance: 15
     use:
       - SG
+  - name: ⚖️ 负载均衡-散列
+    type: load-balance
+    url: http://www.google.com/generate_204
+    interval: 300
+    strategy: consistent-hashing
+    use:
+      - HK
+  - name: ⚖️ 负载均衡-轮询
+    type: load-balance
+    url: http://www.google.com/generate_204
+    interval: 300
+    strategy: round-robin
+    use:
+      - HK
 
 rule-providers:
   Lan:
@@ -495,6 +526,13 @@ rule-providers:
     path: ./profiles/ruleset/TeamViewer-CIDR.yaml
     interval: 86400
 
+  My-BMW:
+    type: http
+    behavior: classical
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BMW/BMW.yaml"
+    path: ./profiles/ruleset/My-BMW.yaml
+    interval: 86400
+
   mydirect:
     type: http
     behavior: classical
@@ -507,6 +545,13 @@ rule-providers:
     behavior: classical
     url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/Special/DNS.yaml"
     path: ./profiles/ruleset/DNS.yaml
+    interval: 86400
+
+  Paypal:
+    type: http
+    behavior: classical
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PayPal/PayPal.yaml"
+    path: ./profiles/ruleset/PayPal.yaml
     interval: 86400
 
   Telegram:
@@ -600,25 +645,11 @@ rule-providers:
     path: ./profiles/ruleset/CCC-Global.yaml
     interval: 86400
 
-  ChinaCompanyIp:
-    type: http
-    behavior: ipcidr
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaCompanyIp.yaml"
-    path: ./profiles/ruleset/ChinaCompanyIp.yaml
-    interval: 86400
-
   CCC-CN:
     type: http
     behavior: classical
     url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/CCC-CN.yaml"
     path: ./profiles/ruleset/CCC-CN.yaml
-    interval: 86400
-
-  ChinaMax_IP:
-    type: http
-    behavior: ipcidr
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax_IP.yaml"
-    path: ./profiles/ruleset/ChinaMax_IP.yaml
     interval: 86400
 
   ChinaMax_Domain:
@@ -642,6 +673,20 @@ rule-providers:
     path: ./profiles/ruleset/Download.yaml
     interval: 86400
 
+  ChinaCompanyIp:
+    type: http
+    behavior: ipcidr
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaCompanyIp.yaml"
+    path: ./profiles/ruleset/ChinaCompanyIp.yaml
+    interval: 86400
+
+  ChinaMax_IP:
+    type: http
+    behavior: ipcidr
+    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax_IP.yaml"
+    path: ./profiles/ruleset/ChinaMax_IP.yaml
+    interval: 86400
+
 rules:
  - RULE-SET,Lan,🎯 全球直连
  - RULE-SET,Direct,🎯 全球直连
@@ -649,8 +694,10 @@ rules:
  - RULE-SET,SteamCN,🎯 全球直连
  - RULE-SET,Government-CN,🎯 全球直连
  - RULE-SET,TeamViewer-CIDR,🎯 全球直连
+ - RULE-SET,My-BMW,🎯 全球直连
  - RULE-SET,mydirect,🎯 全球直连
  - RULE-SET,DNS,🚀 节点选择
+ - RULE-SET,Paypal,🇺🇲 美国节点
  - RULE-SET,Telegram,📲 电报消息
  - RULE-SET,YouTube,📹 油管视频
  - RULE-SET,Netflix,🎥 奈飞视频
@@ -664,12 +711,12 @@ rules:
  - RULE-SET,Global_Domain,🚀 节点选择
  - RULE-SET,Global,🚀 节点选择
  - RULE-SET,CCC-Global,🚀 节点选择
- - RULE-SET,ChinaCompanyIp,🎯 全球直连
  - RULE-SET,CCC-CN,🎯 全球直连
- - RULE-SET,ChinaMax_IP,🎯 全球直连
  - RULE-SET,ChinaMax_Domain,🎯 全球直连
  - RULE-SET,ChinaMax,🎯 全球直连
  - RULE-SET,Download,🎯 全球直连
+ - RULE-SET,ChinaCompanyIp,🎯 全球直连
+ - RULE-SET,ChinaMax_IP,🎯 全球直连
  - GEOIP,CN,🎯 全球直连
  - MATCH,🐟 漏网之鱼
 
