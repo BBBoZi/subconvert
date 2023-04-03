@@ -199,37 +199,6 @@ hide-udp = false
 [Proxy Group]
 
 [Rule]
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/BBBoZi/subconvert/master/myrules/surge/mydirect.list,🎯 全球直连,update-interval=86400
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Lan/Lan.list,🎯 全球直连,update-interval=86400
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Direct/Direct.list,🎯 全球直连,update-interval=86400
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Special/NTP-Service.list,🎯 全球直连,update-interval=86400
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list,🎯 全球直连,update-interval=86400
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/SteamCN/SteamCN.list,🎯 全球直连,update-interval=86400
-DOMAIN-SET,https://ghproxy.com/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Special/Government-CN.list,🎯 全球直连,update-interval=86400
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Special/TeamViewer-CIDR.list,🎯 全球直连,update-interval=86400
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/BMW/BMW.list,🎯 全球直连,update-interval=86400
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Special/DNS.list,🚀 节点选择,update-interval=86400
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/PayPal/PayPal.list,🅿️ PayPal,update-interval=86400
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GoogleVoice/GoogleVoice.list,🇺🇲 美国节点,update-interval=86400
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Telegram/Telegram.list,📲 电报消息,update-interval=86400
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/YouTube/YouTube.list,📹 油管视频,update-interval=86400
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Netflix/Netflix.list,🎥 奈飞视频,update-interval=86400
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Disney/Disney.list,📺 迪士尼视频,update-interval=86400
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/TikTok/TikTok.list,🎵 抖音国际,update-interval=86400
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Steam/Steam.list,🎮 游戏服务,update-interval=86400
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Apple/Apple.list,🍎 苹果服务,update-interval=86400
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/LM-Firefly/Rules/master/SpeedTest.list,⏱ 网络测速,update-interval=86400
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/GlobalMedia/GlobalMedia.list,🌍 国外媒体,update-interval=86400
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Global/Global.list,🚀 节点选择,update-interval=86400
-DOMAIN-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Global/Global_Domain.list,🚀 节点选择
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/LM-Firefly/Rules/master/CCC-Global.list,🚀 节点选择,update-interval=86400
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list,🎯 全球直连,update-interval=86400
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/LM-Firefly/Rules/master/CCC-CN.list,🎯 全球直连,update-interval=86400
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ChinaMax/ChinaMax.list,🎯 全球直连,update-interval=86400
-DOMAIN-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/ChinaMax/ChinaMax_Domain.list,🎯 全球直连
-RULE-SET,https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Surge/Download/Download.list,🎯 全球直连,update-interval=86400
-GEOIP,CN,🎯 全球直连
-FINAL,🐟 漏网之鱼
 
 [URL Rewrite]
 ^https?://(www.)?(g|google).cn https://www.google.com 302
