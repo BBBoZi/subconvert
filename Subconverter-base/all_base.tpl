@@ -148,23 +148,18 @@ dns:
 
 [General]
 loglevel = notify
-dns-server = system, 8.8.8.8, 1.1.1.1, 9.9.9.9
+dns-server = 120.48.143.226:5353
 hijack-dns = 8.8.8.8:53, 8.8.4.4:53
 tun-excluded-routes = 0.0.0.0/8, 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.0.0.0/24, 192.0.2.0/24, 192.168.0.0/16, 192.88.99.0/24, 198.51.100.0/24, 203.0.113.0/24, 224.0.0.0/4, 255.255.255.255/32
 skip-proxy = localhost, *.local, captive.apple.com, guzzoni.apple.com, 0.0.0.0/8, 10.0.0.0/8, 17.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.0.0.0/24, 192.0.2.0/24, 192.168.0.0/16, 192.88.99.0/24, 198.18.0.0/15, 198.51.100.0/24, 203.0.113.0/24, 224.0.0.0/4, 240.0.0.0/4, 255.255.255.255/32
-
 always-real-ip = *.lan, stun.*.*.*, stun.*.*, time.windows.com, time.nist.gov, time.apple.com, time.asia.apple.com, *.ntp.org.cn, *.openwrt.pool.ntp.org, time1.cloud.tencent.com, time.ustc.edu.cn, pool.ntp.org, ntp.ubuntu.com, ntp.aliyun.com, ntp1.aliyun.com, ntp2.aliyun.com, ntp3.aliyun.com, ntp4.aliyun.com, ntp5.aliyun.com, ntp6.aliyun.com, ntp7.aliyun.com, time1.aliyun.com, time2.aliyun.com, time3.aliyun.com, time4.aliyun.com, time5.aliyun.com, time6.aliyun.com, time7.aliyun.com, *.time.edu.cn, time1.apple.com, time2.apple.com, time3.apple.com, time4.apple.com, time5.apple.com, time6.apple.com, time7.apple.com, time1.google.com, time2.google.com, time3.google.com, time4.google.com, music.163.com, *.music.163.com, *.126.net, musicapi.taihe.com, music.taihe.com, songsearch.kugou.com, trackercdn.kugou.com, *.kuwo.cn, api-jooxtt.sanook.com, api.joox.com, joox.com, y.qq.com, *.y.qq.com, streamoc.music.tc.qq.com, mobileoc.music.tc.qq.com, isure.stream.qqmusic.qq.com, dl.stream.qqmusic.qq.com, aqqmusic.tc.qq.com, amobile.music.tc.qq.com, *.xiami.com, *.music.migu.cn, music.migu.cn, *.msftconnecttest.com, *.msftncsi.com, localhost.ptlogin2.qq.com, *.*.*.srv.nintendo.net, *.*.stun.playstation.net, xbox.*.*.microsoft.com, *.ipv6.microsoft.com, *.*.xboxlive.com, *.superjason.vip
-
 geoip-maxmind-url = https://cdn.jsdelivr.net/gh/Loyalsoldier/geoip@release/Country.mmdb
-
-#wifi-assist = true
-#allow-wifi-access = true
-#wifi-access-http-port = 6152
-#wifi-access-socks5-port = 6153
-
+# wifi-assist = true
+# allow-wifi-access = true
+# wifi-access-http-port = 6152
+# wifi-access-socks5-port = 6153
 http-listen = 0.0.0.0:6152
 socks5-listen = 0.0.0.0:6153
-
 # external-controller-access = 请指定密码/0.0.0.0:6170
 replica = false
 tls-provider = openssl
@@ -173,19 +168,19 @@ exclude-simple-hostnames = true
 ipv6 = false
 test-timeout = 4
 proxy-test-url = http://www.gstatic.com/generate_204
-internet-test-url = http://www.baidu.com/
+internet-test-url = http://www.gstatic.com/generate_204
 http-api-web-dashboard = true
 use-default-policy-if-wifi-not-primary = false
+external-controller-access = zjs2811871@0.0.0.0:6170
+read-etc-hosts = false
 
 [Replica]
-hide-apple-request = true
-hide-crashlytics-request = true
-use-keyword-filter = false
-hide-udp = false
-
+hide-apple-request = 1
+hide-crashlytics-request = 1
+use-keyword-filter = 0
+hide-udp = 0
 # [SSID Setting]
 # SSID:ZJS_5G suspend=true
-
 # -----------------------------
 # Surge 的几种策略配置规范，请参考 https://manual.nssurge.com/policy/proxy.html
 # 不同的代理策略有*很多*可选参数，请参考上方连接的 Parameters 一段，根据需求自行添加参数。
