@@ -103,8 +103,6 @@ proxy-groups:
       - 🇨🇳 𝑻𝑾
       - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
       - DIRECT
-    use:
-      - Others
 
   - name: 📍 𝐒𝐞𝐥𝐞𝐜𝐭
     type: select
