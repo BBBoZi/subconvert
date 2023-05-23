@@ -516,214 +516,304 @@ proxy-groups:
       - SG
 
 rule-providers:
+  DNS:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/LM-Firefly/Rules/@master/Clash-RuleSet-Classical/Special/DNS.yaml"
+    path: ./profiles/ruleset/DNS.yaml
+    interval: 86400
+
   Lan:
     type: http
     behavior: classical
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml"
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Lan/Lan.yaml"
     path: ./profiles/ruleset/Lan.yaml
+    interval: 86400
+
+  mydirect:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/BBBoZi/subconvert@master/myrules/clash/mydirect.yaml"
+    path: ./profiles/ruleset/mydirect.yaml
     interval: 86400
 
   Direct:
     type: http
     behavior: classical
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Direct/Direct.yaml"
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Direct/Direct.yaml"
     path: ./profiles/ruleset/Direct.yaml
     interval: 86400
 
   NTP-Service:
     type: http
     behavior: classical
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/Special/NTP-Service.yaml"
+    url: "https://cdn.jsdelivr.net/gh/LM-Firefly/Rules@master/Special/NTP-Service.yaml"
     path: ./profiles/ruleset/NTP-Service.yaml
     interval: 86400
 
   SteamCN:
     type: http
     behavior: classical
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SteamCN/SteamCN.yaml"
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/SteamCN/SteamCN.yaml"
     path: ./profiles/ruleset/SteamCN.yaml
     interval: 86400
 
-  Government-CN:
+  GovCN:
     type: http
     behavior: classical
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/Special/Government-CN.yaml"
-    path: ./profiles/ruleset/Government-CN.yaml
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GovCN/GovCN.yaml"
+    path: ./profiles/ruleset/GovCN.yaml
+    interval: 86400
+
+  BMW:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/BMW/BMW.yaml"
+    path: ./profiles/ruleset/BMW.yaml
+    interval: 86400
+
+  GoogleFCM:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GoogleFCM/GoogleFCM.yaml"
+    path: ./profiles/ruleset/GoogleFCM.yaml
     interval: 86400
 
   TeamViewer-CIDR:
     type: http
-    behavior: classical
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/Special/TeamViewer-CIDR.yaml"
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/LM-Firefly/Rules@master/Clash-RuleSet-Classical/Special/TeamViewer-CIDR.yaml"
     path: ./profiles/ruleset/TeamViewer-CIDR.yaml
-    interval: 86400
-
-  My-BMW:
-    type: http
-    behavior: classical
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BMW/BMW.yaml"
-    path: ./profiles/ruleset/My-BMW.yaml
-    interval: 86400
-
-  mydirect:
-    type: http
-    behavior: classical
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/BBBoZi/subconvert/master/myrules/clash/mydirect.yaml"
-    path: ./profiles/ruleset/mydirect.yaml
-    interval: 86400
-
-  DNS:
-    type: http
-    behavior: classical
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/Special/DNS.yaml"
-    path: ./profiles/ruleset/DNS.yaml
     interval: 86400
 
   Paypal:
     type: http
     behavior: classical
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PayPal/PayPal.yaml"
-    path: ./profiles/ruleset/PayPal.yaml
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/PayPal/PayPal.yaml"
+    path: ./profiles/ruleset/Paypal.yaml
+    interval: 86400
+
+  GoogleVoice:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GoogleVoice/GoogleVoice.yaml"
+    path: ./profiles/ruleset/GoogleVoice.yaml
+    interval: 86400
+
+  OpenAI:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OpenAI/OpenAI.yaml"
+    path: ./profiles/ruleset/OpenAI.yaml
+    interval: 86400
+
+  Porn:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/LM-Firefly/Rules@master/Clash-RuleSet-Classical/PROXY/Porn.yaml"
+    path: ./profiles/ruleset/Porn.yaml
     interval: 86400
 
   Telegram:
     type: http
     behavior: classical
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml"
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Telegram/Telegram.yaml"
     path: ./profiles/ruleset/Telegram.yaml
+    interval: 86400
+
+  Spotify:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Spotify/Spotify.yaml"
+    path: ./profiles/ruleset/Spotify.yaml
+    interval: 86400
+
+  Steam:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Steam/Steam.yaml"
+    path: ./profiles/ruleset/Steam.yaml
+    interval: 86400
+
+  Epic:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Epic/Epic.yaml"
+    path: ./profiles/ruleset/Epic.yaml
+    interval: 86400
+
+  Sony:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Sony/Sony.yaml"
+    path: ./profiles/ruleset/Sony.yaml
+    interval: 86400
+
+  Nintendo:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Nintendo/Nintendo.yaml"
+    path: ./profiles/ruleset/Nintendo.yaml
     interval: 86400
 
   YouTube:
     type: http
     behavior: classical
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml"
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/YouTube/YouTube.yaml"
     path: ./profiles/ruleset/YouTube.yaml
     interval: 86400
 
   Netflix:
     type: http
     behavior: classical
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml"
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Netflix/Netflix.yaml"
     path: ./profiles/ruleset/Netflix.yaml
     interval: 86400
 
   Disney:
     type: http
     behavior: classical
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml"
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Disney/Disney.yaml"
     path: ./profiles/ruleset/Disney.yaml
+    interval: 86400
+
+  AppleTV:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/AppleTV/AppleTV.yaml"
+    path: ./profiles/ruleset/AppleTV.yaml
+    interval: 86400
+
+  AmazonPrimeVideo:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/AmazonPrimeVideo/AmazonPrimeVideo.yaml"
+    path: ./profiles/ruleset/AmazonPrimeVideo.yaml
+    interval: 86400
+
+  HBOHK:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/HBOHK/HBOHK.yaml"
+    path: ./profiles/ruleset/HBOHK.yaml
+    interval: 86400
+
+  HBOUSA:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/HBOUSA/HBOUSA.yaml"
+    path: ./profiles/ruleset/HBOUSA.yaml
+    interval: 86400
+
+  Bahamut:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Bahamut/Bahamut.yaml"
+    path: ./profiles/ruleset/Bahamut.yaml
     interval: 86400
 
   TikTok:
     type: http
     behavior: classical
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml"
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/TikTok/TikTok.yaml"
     path: ./profiles/ruleset/TikTok.yaml
     interval: 86400
 
-  Steam:
+  OneDrive:
     type: http
     behavior: classical
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml"
-    path: ./profiles/ruleset/Steam.yaml
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/OneDrive/OneDrive.yaml"
+    path: ./profiles/ruleset/OneDrive.yaml
+    interval: 86400
+
+  Microsoft:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Microsoft/Microsoft.yaml"
+    path: ./profiles/ruleset/Microsoft.yaml
+    interval: 86400
+
+  GitHub:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GitHub/GitHub.yaml"
+    path: ./profiles/ruleset/GitHub.yaml
     interval: 86400
 
   Apple:
     type: http
     behavior: classical
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml"
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Apple/Apple.yaml"
     path: ./profiles/ruleset/Apple.yaml
+    interval: 86400
+
+  IPTVMainland:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/IPTVMainland/IPTVMainland.yaml"
+    path: ./profiles/ruleset/IPTVMainland.yaml
+    interval: 86400
+
+  IPTVOther:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/IPTVOther/IPTVOther.yaml"
+    path: ./profiles/ruleset/IPTVOther.yaml
     interval: 86400
 
   Speedtest:
     type: http
     behavior: classical
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/SpeedTest.yaml"
+    url: "https://cdn.jsdelivr.net/gh/LM-Firefly/Rules@master/Clash-RuleSet-Classical/SpeedTest.yaml"
     path: ./profiles/ruleset/Speedtest.yaml
-    interval: 86400
-
-  GoogleVoice:
-    type: http
-    behavior: classical
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GoogleVoice/GoogleVoice.yaml"
-    path: ./profiles/ruleset/GoogleVoice.yaml
     interval: 86400
 
   GlobalMedia:
     type: http
     behavior: classical
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia.yaml"
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GlobalMedia/GlobalMedia.yaml"
     path: ./profiles/ruleset/GlobalMedia.yaml
-    interval: 86400
-
-  Global_Domain:
-    type: http
-    behavior: domain
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global_Domain.yaml"
-    path: ./profiles/ruleset/Global_Domain.yaml
     interval: 86400
 
   Global:
     type: http
     behavior: classical
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Global/Global.yaml"
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Global/Global.yaml"
     path: ./profiles/ruleset/Global.yaml
     interval: 86400
 
   CCC-Global:
     type: http
     behavior: classical
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/CCC-Global.yaml"
+    url: "https://cdn.jsdelivr.net/gh/LM-Firefly/Rules@master/Clash-RuleSet-Classical/CCC-Global.yaml"
     path: ./profiles/ruleset/CCC-Global.yaml
+    interval: 86400
+
+  ChinaMaxNoIP:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ChinaMaxNoIP/ChinaMaxNoIP.yaml"
+    path: ./profiles/ruleset/ChinaMaxNoIP.yaml
     interval: 86400
 
   CCC-CN:
     type: http
     behavior: classical
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/LM-Firefly/Rules/master/Clash-RuleSet-Classical/CCC-CN.yaml"
+    url: "https://cdn.jsdelivr.net/gh/LM-Firefly/Rules@master/Clash-RuleSet-Classical/CCC-CN.yaml"
     path: ./profiles/ruleset/CCC-CN.yaml
-    interval: 86400
-
-  ChinaMax_Domain:
-    type: http
-    behavior: domain
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax_Domain.yaml"
-    path: ./profiles/ruleset/ChinaMax_Domain.yaml
-    interval: 86400
-
-  ChinaMax:
-    type: http
-    behavior: classical
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax.yaml"
-    path: ./profiles/ruleset/ChinaMax.yaml
     interval: 86400
 
   Download:
     type: http
     behavior: classical
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Download/Download.yaml"
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Download/Download.yaml"
     path: ./profiles/ruleset/Download.yaml
-    interval: 86400
-
-  ChinaCompanyIp:
-    type: http
-    behavior: ipcidr
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaCompanyIp.yaml"
-    path: ./profiles/ruleset/ChinaCompanyIp.yaml
-    interval: 86400
-
-  ChinaMax_IP:
-    type: http
-    behavior: ipcidr
-    url: "https://gh.api.99988866.xyz/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMax/ChinaMax_IP.yaml"
-    path: ./profiles/ruleset/ChinaMax_IP.yaml
     interval: 86400
 
 rules:
  - RULE-SET,DNS,🚀 𝐏𝐫𝐨𝐱𝐲
  - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,🚀 𝐏𝐫𝐨𝐱𝐲
  - DOMAIN-SUFFIX,services.googleapis.cn,🚀 𝐏𝐫𝐨𝐱𝐲
- - RULE-SET,GoogleCNProxyIP,🚀 𝐏𝐫𝐨𝐱𝐲
  - RULE-SET,Lan,🎯 𝐃𝐢𝐫𝐞𝐜𝐭
  - RULE-SET,mydirect,🎯 𝐃𝐢𝐫𝐞𝐜𝐭
  - RULE-SET,Direct,🎯 𝐃𝐢𝐫𝐞𝐜𝐭
