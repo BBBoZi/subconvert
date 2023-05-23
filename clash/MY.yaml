@@ -806,7 +806,7 @@ rules:
  - RULE-SET,BMW,🎯 𝐃𝐢𝐫𝐞𝐜𝐭
  - RULE-SET,GoogleFCM,🎯 𝐃𝐢𝐫𝐞𝐜𝐭
  - RULE-SET,TeamViewer-CIDR,🎯 𝐃𝐢𝐫𝐞𝐜𝐭
- - RULE-SET,PayPal,🅿️ 𝐏𝐚𝐲𝐏𝐚𝐥
+ - RULE-SET,Paypal,🅿️ 𝐏𝐚𝐲𝐏𝐚𝐥
  - RULE-SET,GoogleVoice,🇺🇲 𝑼𝑺
  - RULE-SET,OpenAI,🇺🇲 𝑼𝑺
  - DOMAIN-SUFFIX,bing.com,🇺🇲 𝑼𝑺
@@ -838,6 +838,6 @@ rules:
  - RULE-SET,CCC-Global,🚀 𝐏𝐫𝐨𝐱𝐲
  - RULE-SET,ChinaMaxNoIP,🎯 𝐃𝐢𝐫𝐞𝐜𝐭
  - RULE-SET,CCC-CN,🎯 𝐃𝐢𝐫𝐞𝐜𝐭
- - RULE-SET,Download.list,🎯 𝐃𝐢𝐫𝐞𝐜𝐭
- - GEOIP,CN,🎯 全球直连
- - MATCH,🐟 漏网之鱼
+ - RULE-SET,Download,🎯 𝐃𝐢𝐫𝐞𝐜𝐭
+ - GEOIP,CN,🎯 𝐃𝐢𝐫𝐞𝐜𝐭
+ - MATCH,🐟 𝐅𝐢𝐧𝐚𝐥
