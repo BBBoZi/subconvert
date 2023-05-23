@@ -20,22 +20,22 @@ hosts:
   localhost: 127.0.0.1
 
 proxy-providers:
-  providers1:
+  ✈️ 𝐒𝐞𝐫𝐯𝐞𝐫-𝐀:
     type: http
     url: ""
     interval: 3600
-    path: ./profiles/proxies/providers1.yaml
+    path: ./profiles/proxies/Server-A.yaml
     health-check:
       enable: true
       interval: 300
       # lazy: true
       url: "http://www.gstatic.com/generate_204"
 
-  providers2:
+  ✈️ 𝐒𝐞𝐫𝐯𝐞𝐫-𝐁:
     type: http
     url: ""
     interval: 3600
-    path: ./profiles/proxies/providers2.yaml
+    path: ./profiles/proxies/Server-B.yaml
     health-check:
       enable: true
       interval: 300
@@ -61,8 +61,8 @@ proxy-groups:
   - name: 📍 𝐒𝐞𝐥𝐞𝐜𝐭
     type: select
     use:
-      - providers1
-      - providers2
+      - ✈️ 𝐒𝐞𝐫𝐯𝐞𝐫-𝐀
+      - ✈️ 𝐒𝐞𝐫𝐯𝐞𝐫-𝐁
     proxies:
       - DIRECT
       
@@ -71,6 +71,7 @@ proxy-groups:
     proxies:
       - 🇭🇰 𝑯𝑲
       - 🇭🇰 𝑯𝑲*
+      - 🚀 𝐏𝐫𝐨𝐱𝐲
       - 🇸🇬 𝑺𝑮
       - 🇸🇬 𝑺𝑮*
       - 🇯🇵 𝑱𝑷
@@ -90,8 +91,8 @@ proxy-groups:
       - 🚀 𝐏𝐫𝐨𝐱𝐲
       - DIRECT
     use:
-      - providers1
-      - providers2
+      - ✈️ 𝐒𝐞𝐫𝐯𝐞𝐫-𝐀
+      - ✈️ 𝐒𝐞𝐫𝐯𝐞𝐫-𝐁
 
   - name: 📲 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦
     type: select
@@ -424,8 +425,8 @@ proxy-groups:
       - 🇨🇳 𝑻𝑾*
       - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
     use:
-      - providers1
-      - providers2
+      - ✈️ 𝐒𝐞𝐫𝐯𝐞𝐫-𝐀
+      - ✈️ 𝐒𝐞𝐫𝐯𝐞𝐫-𝐁
 
   - name: 🎯 𝐃𝐢𝐫𝐞𝐜𝐭
     type: select
@@ -457,7 +458,7 @@ proxy-groups:
     interval: 300
     tolerance: 5
     use:
-      - providers1
+      - ✈️ 𝐒𝐞𝐫𝐯𝐞𝐫-𝐀
   - name: 🇯🇵 𝑱𝑷
     type: url-test
     filter: "日本|川日|东京|大阪|泉日|埼玉|沪日|深日|[^-]日|JP|Japan"
@@ -465,7 +466,7 @@ proxy-groups:
     interval: 300
     tolerance: 15
     use:
-      - providers1
+      - ✈️ 𝐒𝐞𝐫𝐯𝐞𝐫-𝐀
   - name: 🇺🇲 𝑼𝑺
     type: url-test
     filter: "美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States"
@@ -473,7 +474,7 @@ proxy-groups:
     interval: 300
     tolerance: 15
     use:
-      - providers1
+      - ✈️ 𝐒𝐞𝐫𝐯𝐞𝐫-𝐀
   - name: 🇨🇳 𝑻𝑾
     type: url-test
     filter: "台|新北|彰化|TW|Taiwan"
@@ -481,7 +482,7 @@ proxy-groups:
     interval: 300
     tolerance: 15
     use:
-      - providers1
+      - ✈️ 𝐒𝐞𝐫𝐯𝐞𝐫-𝐀
   - name: 🇸🇬 𝑺𝑮
     type: url-test
     filter: "新加坡|坡|狮城|SG|Singapore"
@@ -489,7 +490,7 @@ proxy-groups:
     interval: 300
     tolerance: 15
     use:
-      - providers1
+      - ✈️ 𝐒𝐞𝐫𝐯𝐞𝐫-𝐀
 
   - name: 🇭🇰 𝑯𝑲*
     type: url-test
@@ -498,7 +499,7 @@ proxy-groups:
     interval: 300
     tolerance: 5
     use:
-      - providers2
+      - ✈️ 𝐒𝐞𝐫𝐯𝐞𝐫-𝐁
   - name: 🇯🇵 𝑱𝑷*
     type: url-test
     filter: "日本|川日|东京|大阪|泉日|埼玉|沪日|深日|[^-]日|JP|Japan"
@@ -506,7 +507,7 @@ proxy-groups:
     interval: 300
     tolerance: 15
     use:
-      - providers2
+      - ✈️ 𝐒𝐞𝐫𝐯𝐞𝐫-𝐁
   - name: 🇺🇲 𝑼𝑺*
     type: url-test
     filter: "美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States"
@@ -514,7 +515,7 @@ proxy-groups:
     interval: 300
     tolerance: 15
     use:
-      - providers2
+      - ✈️ 𝐒𝐞𝐫𝐯𝐞𝐫-𝐁
   - name: 🇨🇳 𝑻𝑾*
     type: url-test
     filter: "台|新北|彰化|TW|Taiwan"
@@ -522,7 +523,7 @@ proxy-groups:
     interval: 300
     tolerance: 15
     use:
-      - providers2
+      - ✈️ 𝐒𝐞𝐫𝐯𝐞𝐫-𝐁
   - name: 🇸🇬 𝑺𝑮*
     type: url-test
     filter: "新加坡|坡|狮城|SG|Singapore"
@@ -530,13 +531,13 @@ proxy-groups:
     interval: 300
     tolerance: 15
     use:
-      - providers2
+      - ✈️ 𝐒𝐞𝐫𝐯𝐞𝐫-𝐁
 
 rule-providers:
   DNS:
     type: http
     behavior: classical
-    url: "https://cdn.jsdelivr.net/gh/LM-Firefly/Rules/@master/Clash-RuleSet-Classical/Special/DNS.yaml"
+    url: "https://cdn.jsdelivr.net/gh/LM-Firefly/Rules@master/Clash-RuleSet-Classical/Special/DNS.yaml"
     path: ./profiles/ruleset/DNS.yaml
     interval: 86400
 
@@ -564,7 +565,7 @@ rule-providers:
   NTP-Service:
     type: http
     behavior: classical
-    url: "https://cdn.jsdelivr.net/gh/LM-Firefly/Rules@master/Special/NTP-Service.yaml"
+    url: "https://cdn.jsdelivr.net/gh/LM-Firefly/Rules@master/Clash-RuleSet-Classical/Special/NTP-Service.yaml"
     path: ./profiles/ruleset/NTP-Service.yaml
     interval: 86400
 
@@ -603,11 +604,11 @@ rule-providers:
     path: ./profiles/ruleset/TeamViewer-CIDR.yaml
     interval: 86400
 
-  Paypal:
+  PayPal:
     type: http
     behavior: classical
     url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/PayPal/PayPal.yaml"
-    path: ./profiles/ruleset/Paypal.yaml
+    path: ./profiles/ruleset/PayPal.yaml
     interval: 86400
 
   GoogleVoice:
@@ -683,7 +684,7 @@ rule-providers:
   Netflix:
     type: http
     behavior: classical
-    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Netflix/Netflix.yaml"
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Netflix/Netflix_Classical.yaml"
     path: ./profiles/ruleset/Netflix.yaml
     interval: 86400
 
@@ -760,21 +761,21 @@ rule-providers:
   Apple:
     type: http
     behavior: classical
-    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Apple/Apple.yaml"
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Apple/Apple_Classical.yaml"
     path: ./profiles/ruleset/Apple.yaml
     interval: 86400
 
   IPTVMainland:
     type: http
     behavior: classical
-    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/IPTVMainland/IPTVMainland.yaml"
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/IPTVMainland/IPTVMainland_Classical.yaml"
     path: ./profiles/ruleset/IPTVMainland.yaml
     interval: 86400
 
   IPTVOther:
     type: http
     behavior: classical
-    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/IPTVOther/IPTVOther.yaml"
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/IPTVOther/IPTVOther_Classical.yaml"
     path: ./profiles/ruleset/IPTVOther.yaml
     interval: 86400
 
@@ -788,14 +789,14 @@ rule-providers:
   GlobalMedia:
     type: http
     behavior: classical
-    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GlobalMedia/GlobalMedia.yaml"
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/GlobalMedia/GlobalMedia_Classical.yaml"
     path: ./profiles/ruleset/GlobalMedia.yaml
     interval: 86400
 
   Global:
     type: http
     behavior: classical
-    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Global/Global.yaml"
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/Global/Global_Classical.yaml"
     path: ./profiles/ruleset/Global.yaml
     interval: 86400
 
@@ -809,7 +810,7 @@ rule-providers:
   ChinaMaxNoIP:
     type: http
     behavior: classical
-    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ChinaMaxNoIP/ChinaMaxNoIP.yaml"
+    url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/ChinaMaxNoIP/ChinaMaxNoIP_Classical.yaml"
     path: ./profiles/ruleset/ChinaMaxNoIP.yaml
     interval: 86400
 
@@ -840,7 +841,7 @@ rules:
  - RULE-SET,BMW,🎯 𝐃𝐢𝐫𝐞𝐜𝐭
  - RULE-SET,GoogleFCM,🎯 𝐃𝐢𝐫𝐞𝐜𝐭
  - RULE-SET,TeamViewer-CIDR,🎯 𝐃𝐢𝐫𝐞𝐜𝐭
- - RULE-SET,Paypal,🅿️ 𝐏𝐚𝐲𝐏𝐚𝐥
+ - RULE-SET,PayPal,🅿️ 𝐏𝐚𝐲𝐏𝐚𝐥
  - RULE-SET,GoogleVoice,🇺🇲 𝑼𝑺
  - RULE-SET,OpenAI,🇺🇲 𝑼𝑺
  - DOMAIN-SUFFIX,bing.com,🇺🇲 𝑼𝑺
