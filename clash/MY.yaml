@@ -1,147 +1,23 @@
-port: 7890
-socks-port: 7891
+mixed-port: 7890
 redir-port: 7892
 tproxy-port: 7893
-mixed-port: 7894
+authentication: [""]
 allow-lan: true
 mode: Rule
 log-level: info
 ipv6: false
-external-controller: 127.0.0.1:9091
+external-controller: :9090
+tun: {enable: false}
+experimental: {ignore-resolve-fail: true}
+dns: {enable: true, ipv6: false, listen: 127.0.0.1:8553, use-hosts: true, fake-ip-range: 198.18.0.1/16, enhanced-mode: redir-host, fake-ip-filter: ["*.lan", time.windows.com, time.nist.gov, time.apple.com, time.asia.apple.com, "*.ntp.org.cn", "*.openwrt.pool.ntp.org", time1.cloud.tencent.com, time.ustc.edu.cn, pool.ntp.org, ntp.ubuntu.com, ntp.aliyun.com, ntp1.aliyun.com, ntp2.aliyun.com, ntp3.aliyun.com, ntp4.aliyun.com, ntp5.aliyun.com, ntp6.aliyun.com, ntp7.aliyun.com, time1.aliyun.com, time2.aliyun.com, time3.aliyun.com, time4.aliyun.com, time5.aliyun.com, time6.aliyun.com, time7.aliyun.com, "*.time.edu.cn", time1.apple.com, time2.apple.com, time3.apple.com, time4.apple.com, time5.apple.com, time6.apple.com, time7.apple.com, time1.google.com, time2.google.com, time3.google.com, time4.google.com, music.163.com, "*.music.163.com", "*.126.net", musicapi.taihe.com, music.taihe.com, songsearch.kugou.com, trackercdn.kugou.com, "*.kuwo.cn", api-jooxtt.sanook.com, api.joox.com, joox.com, y.qq.com, "*.y.qq.com", streamoc.music.tc.qq.com, mobileoc.music.tc.qq.com, isure.stream.qqmusic.qq.com, dl.stream.qqmusic.qq.com, aqqmusic.tc.qq.com, amobile.music.tc.qq.com, "*.xiami.com", "*.music.migu.cn", music.migu.cn, "*.msftconnecttest.com", "*.msftncsi.com", localhost.ptlogin2.qq.com, "*.*.*.srv.nintendo.net", "*.*.stun.playstation.net", xbox.*.*.microsoft.com, "*.*.xboxlive.com", proxy.golang.org, "*.sgcc.com.cn", "*.alicdn.com", "*.aliyuncs.com", "*.superjason.vip", superjason.vip], default-nameserver: [223.5.5.5, 119.29.29.29, 8.8.8.8], nameserver: [120.48.143.226:5353], fallback: [https://h2o.apad.pro/dns-query], fallback-filter: {geoip: true}}
+sniffer: {enable: true, skip-domain: [Mijia Cloud], sniff: {tls: {ports: [443, 8443]}, http: {ports: [80, 8080-8880]}}}
+store-selected: true
+find-process-mode: strict
+tcp-concurrent: true
 hosts:
-  mtalk.google.com: 108.177.125.188
-dns:
-  enable: true
-  ipv6: false
-  listen: 127.0.0.1:8853
-  default-nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
-    - 114.114.114.114
-    - 8.8.8.8
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.10.0.1/16
-  fake-ip-filter:
-    - "*.lan"
-    - stun.*.*.*
-    - stun.*.*
-    - time.windows.com
-    - time.nist.gov
-    - time.apple.com
-    - time.asia.apple.com
-    - "*.ntp.org.cn"
-    - "*.openwrt.pool.ntp.org"
-    - time1.cloud.tencent.com
-    - time.ustc.edu.cn
-    - pool.ntp.org
-    - ntp.ubuntu.com
-    - ntp.aliyun.com
-    - ntp1.aliyun.com
-    - ntp2.aliyun.com
-    - ntp3.aliyun.com
-    - ntp4.aliyun.com
-    - ntp5.aliyun.com
-    - ntp6.aliyun.com
-    - ntp7.aliyun.com
-    - time1.aliyun.com
-    - time2.aliyun.com
-    - time3.aliyun.com
-    - time4.aliyun.com
-    - time5.aliyun.com
-    - time6.aliyun.com
-    - time7.aliyun.com
-    - "*.time.edu.cn"
-    - time1.apple.com
-    - time2.apple.com
-    - time3.apple.com
-    - time4.apple.com
-    - time5.apple.com
-    - time6.apple.com
-    - time7.apple.com
-    - time1.google.com
-    - time2.google.com
-    - time3.google.com
-    - time4.google.com
-    - music.163.com
-    - "*.music.163.com"
-    - "*.126.net"
-    - musicapi.taihe.com
-    - music.taihe.com
-    - songsearch.kugou.com
-    - trackercdn.kugou.com
-    - "*.kuwo.cn"
-    - api-jooxtt.sanook.com
-    - api.joox.com
-    - joox.com
-    - y.qq.com
-    - "*.y.qq.com"
-    - streamoc.music.tc.qq.com
-    - mobileoc.music.tc.qq.com
-    - isure.stream.qqmusic.qq.com
-    - dl.stream.qqmusic.qq.com
-    - aqqmusic.tc.qq.com
-    - amobile.music.tc.qq.com
-    - "*.xiami.com"
-    - "*.music.migu.cn"
-    - music.migu.cn
-    - "*.msftconnecttest.com"
-    - "*.msftncsi.com"
-    - localhost.ptlogin2.qq.com
-    - "*.*.*.srv.nintendo.net"
-    - "*.*.stun.playstation.net"
-    - xbox.*.*.microsoft.com
-    - "*.ipv6.microsoft.com"
-    - "*.*.xboxlive.com"
-  nameserver:
-    - 61.139.2.69
-    - 218.6.200.139
-    - 223.5.5.5
-    - 119.29.29.29
-    - 114.114.114.114
-  fallback:
-    - tls://1.1.1.1
-    - tls://8.8.4.4
-    - https://dns.google/dns-query
-    - https://cloudflare-dns.com/dns-query
-    - https://dns.rubyfish.cn/dns-query
-  fallback-filter:
-    geoip: true
-    geoip-code: CN
-    ipcidr:
-      - 0.0.0.0/8
-      - 10.0.0.0/8
-      - 100.64.0.0/10
-      - 127.0.0.0/8
-      - 169.254.0.0/16
-      - 172.16.0.0/12
-      - 192.0.0.0/24
-      - 192.0.2.0/24
-      - 192.88.99.0/24
-      - 192.168.0.0/16
-      - 198.18.0.0/15
-      - 198.51.100.0/24
-      - 203.0.113.0/24
-      - 224.0.0.0/4
-      - 240.0.0.0/4
-      - 255.255.255.255/32
-    domain:
-      - +.google.com
-      - +.facebook.com
-      - +.twitter.com
-      - +.youtube.com
-      - +.xn--ngstr-lra8j.com
-      - +.google.cn
-      - +.googleapis.cn
-      - +.googleapis.com
-      - +.gvt1.com
-      - +.github.com
-      - +.githubusercontent.com
-      - +.ipleak.net
-      - +.2ip.io
-      - +.browserleaks.com
-      - +.browserleaks.org
-      - +.whrq.net
-      - +.whoer.net
+  time.android.com: 203.107.6.88
+  time.facebook.com: 203.107.6.88
+  localhost: 127.0.0.1
 
 proxy-providers:
   HK:
@@ -217,141 +93,20 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
 
 proxy-groups:
-  - name: 🚀 节点选择
+  - name: 🚀 𝐏𝐫𝐨𝐱𝐲
     type: select
     proxies:
-      - 📍 手动切换
-      - 🇭🇰 香港节点
-      - 🇸🇬 新加坡节点
-      - 🇯🇵 日本节点
-      - 🇺🇲 美国节点
-      - 🇨🇳 台湾节点
-      - ⚖️ 香港负载均衡-轮询
-      - ⚖️ 香港负载均衡-散列
+      - 🇭🇰 𝑯𝑲
+      - 🇸🇬 𝑺𝑮
+      - 🇯🇵 𝑱𝑷
+      - 🇺🇲 𝑼𝑺
+      - 🇨🇳 𝑻𝑾
+      - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
       - DIRECT
-  - name: 📍 手动切换
-    type: select
     use:
-      - HK
-      - SG
-      - US
-      - TW
-      - JP
       - Others
-  - name: 📲 电报消息
-    type: select
-    use:
-      - HK
-      - SG
-      - US
-      - TW
-      - JP
-      - Others
-    proxies:
-      - 🚀 节点选择
-      - 📍 手动切换
-      - 🇭🇰 香港节点
-      - 🇸🇬 新加坡节点
-      - 🇯🇵 日本节点
-      - 🇺🇲 美国节点
-      - 🇨🇳 台湾节点
-      - ⚖️ 香港负载均衡-轮询
-      - ⚖️ 香港负载均衡-散列
-      - DIRECT
-  - name: 📹 油管视频
-    type: select
-    proxies:
-      - 🚀 节点选择
-      - 📍 手动切换
-      - 🇭🇰 香港节点
-      - 🇸🇬 新加坡节点
-      - 🇯🇵 日本节点
-      - 🇺🇲 美国节点
-      - 🇨🇳 台湾节点
-      - ⚖️ 香港负载均衡-轮询
-      - ⚖️ 香港负载均衡-散列
-      - DIRECT
-  - name: 🎥 奈飞视频
-    type: select
-    use:
-      - HK
-      - SG
-      - US
-      - TW
-      - JP
-      - Others
-    proxies:
-      - 🚀 节点选择
-      - 📍 手动切换
-      - 🇭🇰 香港节点
-      - 🇸🇬 新加坡节点
-      - 🇯🇵 日本节点
-      - 🇺🇲 美国节点
-      - 🇨🇳 台湾节点
-      - ⚖️ 香港负载均衡-轮询
-      - ⚖️ 香港负载均衡-散列
-      - DIRECT
-  - name: 📺 迪士尼视频
-    type: select
-    use:
-      - HK
-      - SG
-      - US
-      - TW
-      - JP
-      - Others
-    proxies:
-      - 🚀 节点选择
-      - 📍 手动切换
-      - 🇭🇰 香港节点
-      - 🇸🇬 新加坡节点
-      - 🇯🇵 日本节点
-      - 🇺🇲 美国节点
-      - 🇨🇳 台湾节点
-      - ⚖️ 香港负载均衡-轮询
-      - ⚖️ 香港负载均衡-散列
-      - DIRECT
-  - name: 🎵 抖音国际
-    type: select
-    use:
-      - HK
-      - SG
-      - US
-      - TW
-      - JP
-      - Others
-    proxies:
-      - 🚀 节点选择
-      - 📍 手动切换
-      - 🇺🇲 美国节点
-      - 🇯🇵 日本节点
-      - 🇨🇳 台湾节点
-      - 🇭🇰 香港节点
-      - 🇸🇬 新加坡节点
-      - ⚖️ 香港负载均衡-轮询
-      - ⚖️ 香港负载均衡-散列
-      - DIRECT
-  - name: 🌍 国外媒体
-    type: select
-    use:
-      - HK
-      - SG
-      - US
-      - TW
-      - JP
-      - Others
-    proxies:
-      - 🚀 节点选择
-      - 📍 手动切换
-      - 🇭🇰 香港节点
-      - 🇸🇬 新加坡节点
-      - 🇯🇵 日本节点
-      - 🇺🇲 美国节点
-      - 🇨🇳 台湾节点
-      - ⚖️ 香港负载均衡-轮询
-      - ⚖️ 香港负载均衡-散列
-      - DIRECT
-  - name: 🎮 游戏服务
+
+  - name: 📍 𝐒𝐞𝐥𝐞𝐜𝐭
     type: select
     use:
       - HK
@@ -362,17 +117,358 @@ proxy-groups:
       - Others
     proxies:
       - DIRECT
-      - 🚀 节点选择
-      - 📍 手动切换
-      - 🇭🇰 香港节点
-      - 🇸🇬 新加坡节点
-      - 🇯🇵 日本节点
-      - 🇺🇲 美国节点
-      - 🇨🇳 台湾节点
-      - ⚖️ 香港负载均衡-轮询
-      - ⚖️ 香港负载均衡-散列
-  - name: 🍎 苹果服务
+      
+  - name: 🌐 𝐆𝐢𝐭𝐇𝐮𝐛
     type: select
+    proxies:
+      - 🇭🇰 𝑯𝑲
+      - 🇸🇬 𝑺𝑮
+      - 🇯🇵 𝑱𝑷
+      - 🇺🇲 𝑼𝑺
+      - 🇨🇳 𝑻𝑾
+      - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+    use:
+      - Others
+    proxies:
+      - DIRECT
+
+  - name: 🅿️ 𝐏𝐚𝐲𝐏𝐚𝐥
+    type: select
+    proxies:
+      - 🇺🇲 𝑼𝑺
+      - 🚀 𝐏𝐫𝐨𝐱𝐲
+      - DIRECT
+    use:
+      - US
+
+  - name: 📲 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦
+    type: select
+    proxies:
+      - 🇭🇰 𝑯𝑲
+      - 🚀 𝐏𝐫𝐨𝐱𝐲
+      - 🇸🇬 𝑺𝑮
+      - 🇯🇵 𝑱𝑷
+      - 🇺🇲 𝑼𝑺
+      - 🇨🇳 𝑻𝑾
+      - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+    use:
+      - Others
+    proxies:
+      - DIRECT
+
+  - name: 📹 𝐘𝐨𝐮𝐓𝐮𝐛𝐞
+    type: select
+    proxies:
+      - 🇭🇰 𝑯𝑲
+      - 🚀 𝐏𝐫𝐨𝐱𝐲
+      - 🇸🇬 𝑺𝑮
+      - 🇯🇵 𝑱𝑷
+      - 🇺🇲 𝑼𝑺
+      - 🇨🇳 𝑻𝑾
+      - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+    use:
+      - Others
+    proxies:
+      - DIRECT
+
+  - name: 📺 𝐍𝐞𝐭𝐟𝐥𝐢𝐱
+    type: select
+    proxies:
+      - 🇸🇬 𝑺𝑮
+      - 🚀 𝐏𝐫𝐨𝐱𝐲
+      - 🇭🇰 𝑯𝑲
+      - 🇯🇵 𝑱𝑷
+      - 🇺🇲 𝑼𝑺
+      - 🇨🇳 𝑻𝑾
+      - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+    use:
+      - Others
+    proxies:
+      - DIRECT
+
+  - name: 🍿 𝐃𝐢𝐬𝐧𝐞𝐲𝐏𝐥𝐮𝐬
+    type: select
+    proxies:
+      - 🇸🇬 𝑺𝑮
+      - 🚀 𝐏𝐫𝐨𝐱𝐲
+      - 🇭🇰 𝑯𝑲
+      - 🇯🇵 𝑱𝑷
+      - 🇺🇲 𝑼𝑺
+      - 🇨🇳 𝑻𝑾
+      - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+    use:
+      - Others
+    proxies:
+      - DIRECT
+
+  - name: 🎬 𝐏𝐫𝐢𝐦𝐞𝐕𝐢𝐝𝐞𝐨
+    type: select
+    proxies:
+      - 🇸🇬 𝑺𝑮
+      - 🚀 𝐏𝐫𝐨𝐱𝐲
+      - 🇭🇰 𝑯𝑲
+      - 🇯🇵 𝑱𝑷
+      - 🇺🇲 𝑼𝑺
+      - 🇨🇳 𝑻𝑾
+      - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+    use:
+      - Others
+    proxies:
+      - DIRECT
+
+  - name: 📽️ 𝐇𝐁𝐎𝐆𝐎
+    type: select
+    proxies:
+      - 🇭🇰 𝑯𝑲
+      - 🚀 𝐏𝐫𝐨𝐱𝐲
+      - 🇸🇬 𝑺𝑮
+      - 🇯🇵 𝑱𝑷
+      - 🇺🇲 𝑼𝑺
+      - 🇨🇳 𝑻𝑾
+      - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+    use:
+      - Others
+    proxies:
+      - DIRECT
+
+  - name: 🎥 𝐇𝐁𝐎𝐌𝐀𝐗
+    type: select
+    proxies:
+      - 🇺🇲 𝑼𝑺
+      - 🚀 𝐏𝐫𝐨𝐱𝐲
+      - 🇭🇰 𝑯𝑲
+      - 🇸🇬 𝑺𝑮
+      - 🇯🇵 𝑱𝑷
+      - 🇨🇳 𝑻𝑾
+      - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+    use:
+      - Others
+    proxies:
+      - DIRECT
+
+  - name: 🍏 𝐀𝐩𝐩𝐥𝐞𝐓𝐕
+    type: select
+    proxies:
+      - 🇺🇲 𝑼𝑺
+      - 🚀 𝐏𝐫𝐨𝐱𝐲
+      - 🇭🇰 𝑯𝑲
+      - 🇸🇬 𝑺𝑮
+      - 🇯🇵 𝑱𝑷
+      - 🇨🇳 𝑻𝑾
+      - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+    use:
+      - Others
+    proxies:
+      - DIRECT
+
+  - name: 👾 𝐁𝐚𝐡𝐚𝐦𝐮𝐭
+    type: select
+    proxies:
+      - 🇨🇳 𝑻𝑾
+      - 🚀 𝐏𝐫𝐨𝐱𝐲
+    use:
+      - TW
+    proxies:
+      - DIRECT
+
+  - name: 🎵 𝐓𝐢𝐤𝐓𝐨𝐤
+    type: select
+    proxies:
+      - 🇺🇲 𝑼𝑺
+      - 🇯🇵 𝑱𝑷
+      - 🚀 𝐏𝐫𝐨𝐱𝐲
+      - 🇭🇰 𝑯𝑲
+      - 🇸🇬 𝑺𝑮
+      - 🇨🇳 𝑻𝑾
+      - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+    use:
+      - Others
+    proxies:
+      - DIRECT
+
+  - name: 🎶 𝐒𝐩𝐨𝐭𝐢𝐟𝐲
+    type: select
+    proxies:
+      - 🇺🇲 𝑼𝑺
+      - 🚀 𝐏𝐫𝐨𝐱𝐲
+      - 🇭🇰 𝑯𝑲
+      - 🇸🇬 𝑺𝑮
+      - 🇯🇵 𝑱𝑷
+      - 🇨🇳 𝑻𝑾
+      - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+    use:
+      - Others
+    proxies:
+      - DIRECT
+
+  - name: 🔞 𝐏𝐨𝐫𝐧𝐖𝐞𝐛
+    type: select
+    proxies:
+      - 🚀 𝐏𝐫𝐨𝐱𝐲
+      - 🇭🇰 𝑯𝑲
+      - 🇸🇬 𝑺𝑮
+      - 🇯🇵 𝑱𝑷
+      - 🇺🇲 𝑼𝑺
+      - 🇨🇳 𝑻𝑾
+      - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+    use:
+      - Others
+    proxies:
+      - DIRECT
+      - REJECT
+
+  - name: 🌍 𝐆𝐥𝐨𝐛𝐥𝐞𝐓𝐕
+    type: select
+    proxies:
+      - 🚀 𝐏𝐫𝐨𝐱𝐲
+      - 🇭🇰 𝑯𝑲
+      - 🇸🇬 𝑺𝑮
+      - 🇯🇵 𝑱𝑷
+      - 🇺🇲 𝑼𝑺
+      - 🇨🇳 𝑻𝑾
+      - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+    use:
+      - Others
+    proxies:
+      - DIRECT
+
+  - name: 🛰️ 𝐎𝐭𝐡𝐞𝐫𝐈𝐏𝐓𝐕
+    type: select
+    proxies:
+      - 🚀 𝐏𝐫𝐨𝐱𝐲
+      - 🇭🇰 𝑯𝑲
+      - 🇸🇬 𝑺𝑮
+      - 🇯🇵 𝑱𝑷
+      - 🇺🇲 𝑼𝑺
+      - 🇨🇳 𝑻𝑾
+      - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+    use:
+      - Others
+    proxies:
+      - DIRECT
+
+  - name: 📡 𝐂𝐡𝐢𝐧𝐚𝐈𝐏𝐓𝐕
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 𝐏𝐫𝐨𝐱𝐲
+      - 🇭🇰 𝑯𝑲
+      - 🇸🇬 𝑺𝑮
+      - 🇯🇵 𝑱𝑷
+      - 🇺🇲 𝑼𝑺
+      - 🇨🇳 𝑻𝑾
+      - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+    use:
+      - Others
+
+  - name: 🎮 𝐆𝐚𝐦𝐞𝐬
+    type: select
+    proxies:
+      - 🇭🇰 𝑯𝑲
+      - 🚀 𝐏𝐫𝐨𝐱𝐲
+      - 🇸🇬 𝑺𝑮
+      - 🇯🇵 𝑱𝑷
+      - 🇺🇲 𝑼𝑺
+      - 🇨🇳 𝑻𝑾
+      - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+    use:
+      - Others
+    proxies:
+      - DIRECT
+
+  - name: 🍎 𝐀𝐩𝐩𝐥𝐞
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 𝐏𝐫𝐨𝐱𝐲
+      - 🇭🇰 𝑯𝑲
+      - 🇸🇬 𝑺𝑮
+      - 🇯🇵 𝑱𝑷
+      - 🇺🇲 𝑼𝑺
+      - 🇨🇳 𝑻𝑾
+      - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+    use:
+      - HK
+      - SG
+      - US
+      - TW
+      - JP
+      - Others
+
+  - name: ☁️ 𝐎𝐧𝐞𝐃𝐫𝐢𝐯𝐞
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 𝐏𝐫𝐨𝐱𝐲
+      - 🇭🇰 𝑯𝑲
+      - 🇸🇬 𝑺𝑮
+      - 🇯🇵 𝑱𝑷
+      - 🇺🇲 𝑼𝑺
+      - 🇨🇳 𝑻𝑾
+      - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+    use:
+      - HK
+      - SG
+      - US
+      - TW
+      - JP
+      - Others
+
+  - name: Ⓜ️ 𝐌𝐢𝐜𝐫𝐨𝐬𝐨𝐟𝐭
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 𝐏𝐫𝐨𝐱𝐲
+      - 🇭🇰 𝑯𝑲
+      - 🇸🇬 𝑺𝑮
+      - 🇯🇵 𝑱𝑷
+      - 🇺🇲 𝑼𝑺
+      - 🇨🇳 𝑻𝑾
+      - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+    use:
+      - HK
+      - SG
+      - US
+      - TW
+      - JP
+      - Others
+
+  - name: ⏱️ 𝐒𝐩𝐞𝐞𝐝𝐓𝐞𝐬𝐭
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 𝐏𝐫𝐨𝐱𝐲
+      - 🇭🇰 𝑯𝑲
+      - 🇸🇬 𝑺𝑮
+      - 🇯🇵 𝑱𝑷
+      - 🇺🇲 𝑼𝑺
+      - 🇨🇳 𝑻𝑾
+      - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+    use:
+      - HK
+      - SG
+      - US
+      - TW
+      - JP
+      - Others
+
+  - name: 🎯 𝐃𝐢𝐫𝐞𝐜𝐭
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 𝐏𝐫𝐨𝐱𝐲
+      - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+
+  - name: 🐟 𝐅𝐢𝐧𝐚𝐥
+    type: select
+    proxies:
+      - 🚀 𝐏𝐫𝐨𝐱𝐲
+      - 🇭🇰 𝑯𝑲
+      - 🇸🇬 𝑺𝑮
+      - 🇯🇵 𝑱𝑷
+      - 🇺🇲 𝑼𝑺
+      - 🇨🇳 𝑻𝑾
+      - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
     use:
       - HK
       - SG
@@ -382,110 +478,42 @@ proxy-groups:
       - Others
     proxies:
       - DIRECT
-      - 🚀 节点选择
-      - 📍 手动切换
-      - 🇭🇰 香港节点
-      - 🇸🇬 新加坡节点
-      - 🇯🇵 日本节点
-      - 🇺🇲 美国节点
-      - 🇨🇳 台湾节点
-      - ⚖️ 香港负载均衡-轮询
-      - ⚖️ 香港负载均衡-散列
-  - name: ⏱ 网络测速
-    type: select
-    use:
-      - HK
-      - SG
-      - US
-      - TW
-      - JP
-      - Others
-    proxies:
-      - DIRECT
-      - 🚀 节点选择
-      - 📍 手动切换
-      - 🇭🇰 香港节点
-      - 🇸🇬 新加坡节点
-      - 🇯🇵 日本节点
-      - 🇺🇲 美国节点
-      - 🇨🇳 台湾节点
-      - ⚖️ 香港负载均衡-轮询
-      - ⚖️ 香港负载均衡-散列
-  - name: 🎯 全球直连
-    type: select
-    proxies:
-      - DIRECT
-      - 🚀 节点选择
-      - 📍 手动切换
-  - name: 🐟 漏网之鱼
-    type: select
-    use:
-      - HK
-      - SG
-      - US
-      - TW
-      - JP
-      - Others
-    proxies:
-      - DIRECT
-      - 🚀 节点选择
-      - 📍 手动切换
-      - 🇭🇰 香港节点
-      - 🇸🇬 新加坡节点
-      - 🇯🇵 日本节点
-      - 🇺🇲 美国节点
-      - 🇨🇳 台湾节点
-      - ⚖️ 香港负载均衡-轮询
-      - ⚖️ 香港负载均衡-散列
-  - name: 🇭🇰 香港节点
+
+  - name: 🇭🇰 𝑯𝑲
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 5
     use:
       - HK
-  - name: 🇯🇵 日本节点
+  - name: 🇯🇵 𝑱𝑷
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 15
     use:
       - JP
-  - name: 🇺🇲 美国节点
+  - name: 🇺🇲 𝑼𝑺
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 15
     use:
       - US
-  - name: 🇨🇳 台湾节点
+  - name: 🇨🇳 𝑻𝑾
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 15
     use:
       - TW
-  - name: 🇸🇬 新加坡节点
+  - name: 🇸🇬 𝑺𝑮
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 15
     use:
       - SG
-  - name: ⚖️ 负载均衡-散列
-    type: load-balance
-    url: http://www.google.com/generate_204
-    interval: 300
-    strategy: consistent-hashing
-    use:
-      - HK
-  - name: ⚖️ 负载均衡-轮询
-    type: load-balance
-    url: http://www.google.com/generate_204
-    interval: 300
-    strategy: round-robin
-    use:
-      - HK
 
 rule-providers:
   Lan:
@@ -692,35 +720,51 @@ rule-providers:
     interval: 86400
 
 rules:
- - RULE-SET,Lan,🎯 全球直连
- - RULE-SET,Direct,🎯 全球直连
- - RULE-SET,NTP-Service,🎯 全球直连
- - RULE-SET,SteamCN,🎯 全球直连
- - RULE-SET,Government-CN,🎯 全球直连
- - RULE-SET,TeamViewer-CIDR,🎯 全球直连
- - RULE-SET,My-BMW,🎯 全球直连
- - RULE-SET,mydirect,🎯 全球直连
- - RULE-SET,DNS,🚀 节点选择
- - RULE-SET,Paypal,🇺🇲 美国节点
- - RULE-SET,Telegram,📲 电报消息
- - RULE-SET,YouTube,📹 油管视频
- - RULE-SET,Netflix,🎥 奈飞视频
- - RULE-SET,Disney,📺 迪士尼视频
- - RULE-SET,TikTok,🎵 抖音国际
- - RULE-SET,Steam,🎮 游戏服务
- - RULE-SET,Apple,🍎 苹果服务
- - RULE-SET,Speedtest,⏱ 网络测速
- - RULE-SET,GoogleVoice,🇺🇲 美国节点
- - RULE-SET,GlobalMedia,🌍 国外媒体
- - RULE-SET,Global_Domain,🚀 节点选择
- - RULE-SET,Global,🚀 节点选择
- - RULE-SET,CCC-Global,🚀 节点选择
- - RULE-SET,CCC-CN,🎯 全球直连
- - RULE-SET,ChinaMax_Domain,🎯 全球直连
- - RULE-SET,ChinaMax,🎯 全球直连
- - RULE-SET,Download,🎯 全球直连
- - RULE-SET,ChinaCompanyIp,🎯 全球直连
- - RULE-SET,ChinaMax_IP,🎯 全球直连
+ - RULE-SET,DNS,🚀 𝐏𝐫𝐨𝐱𝐲
+ - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,🚀 𝐏𝐫𝐨𝐱𝐲
+ - DOMAIN-SUFFIX,services.googleapis.cn,🚀 𝐏𝐫𝐨𝐱𝐲
+ - RULE-SET,GoogleCNProxyIP,🚀 𝐏𝐫𝐨𝐱𝐲
+ - RULE-SET,Lan,🎯 𝐃𝐢𝐫𝐞𝐜𝐭
+ - RULE-SET,mydirect,🎯 𝐃𝐢𝐫𝐞𝐜𝐭
+ - RULE-SET,Direct,🎯 𝐃𝐢𝐫𝐞𝐜𝐭
+ - RULE-SET,NTP-Service,🎯 𝐃𝐢𝐫𝐞𝐜𝐭
+ - RULE-SET,SteamCN,🎯 𝐃𝐢𝐫𝐞𝐜𝐭
+ - RULE-SET,GovCN,🎯 𝐃𝐢𝐫𝐞𝐜𝐭
+ - RULE-SET,BMW,🎯 𝐃𝐢𝐫𝐞𝐜𝐭
+ - RULE-SET,GoogleFCM,🎯 𝐃𝐢𝐫𝐞𝐜𝐭
+ - RULE-SET,TeamViewer-CIDR,🎯 𝐃𝐢𝐫𝐞𝐜𝐭
+ - RULE-SET,PayPal,🅿️ 𝐏𝐚𝐲𝐏𝐚𝐥
+ - RULE-SET,GoogleVoice,🇺🇲 𝑼𝑺
+ - RULE-SET,OpenAI,🇺🇲 𝑼𝑺
+ - DOMAIN-SUFFIX,bing.com,🇺🇲 𝑼𝑺
+ - RULE-SET,Porn,🔞 𝐏𝐨𝐫𝐧𝐖𝐞𝐛
+ - RULE-SET,Telegram,📲 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦
+ - RULE-SET,Spotify,🎶 𝐒𝐩𝐨𝐭𝐢𝐟𝐲
+ - RULE-SET,Steam,🎮 𝐆𝐚𝐦𝐞𝐬
+ - RULE-SET,Epic,🎮 𝐆𝐚𝐦𝐞𝐬
+ - RULE-SET,Sony,🎮 𝐆𝐚𝐦𝐞𝐬
+ - RULE-SET,Nintendo,🎮 𝐆𝐚𝐦𝐞𝐬
+ - RULE-SET,YouTube,📹 𝐘𝐨𝐮𝐓𝐮𝐛𝐞
+ - RULE-SET,Netflix,📺 𝐍𝐞𝐭𝐟𝐥𝐢𝐱
+ - RULE-SET,Disney,🍿 𝐃𝐢𝐬𝐧𝐞𝐲𝐏𝐥𝐮𝐬
+ - RULE-SET,AppleTV,🍏 𝐀𝐩𝐩𝐥𝐞𝐓𝐕
+ - RULE-SET,AmazonPrimeVideo,🎬 𝐏𝐫𝐢𝐦𝐞𝐕𝐢𝐝𝐞𝐨
+ - RULE-SET,HBOHK,📽️ 𝐇𝐁𝐎𝐆𝐎
+ - RULE-SET,HBOUSA,🎥 𝐇𝐁𝐎𝐌𝐀𝐗
+ - RULE-SET,Bahamut,👾 𝐁𝐚𝐡𝐚𝐦𝐮𝐭
+ - RULE-SET,TikTok,🎵 𝐓𝐢𝐤𝐓𝐨𝐤
+ - RULE-SET,OneDrive,☁️ 𝐎𝐧𝐞𝐃𝐫𝐢𝐯𝐞
+ - RULE-SET,Microsoft,Ⓜ️ 𝐌𝐢𝐜𝐫𝐨𝐬𝐨𝐟𝐭
+ - RULE-SET,GitHub,🌐 𝐆𝐢𝐭𝐇𝐮𝐛
+ - RULE-SET,Apple,🍎 𝐀𝐩𝐩𝐥𝐞
+ - RULE-SET,IPTVMainland,📡 𝐂𝐡𝐢𝐧𝐚𝐈𝐏𝐓𝐕
+ - RULE-SET,IPTVOther,🛰️ 𝐎𝐭𝐡𝐞𝐫𝐈𝐏𝐓𝐕
+ - RULE-SET,Speedtest,⏱️ 𝐒𝐩𝐞𝐞𝐝𝐓𝐞𝐬𝐭
+ - RULE-SET,GlobalMedia,🌍 𝐆𝐥𝐨𝐛𝐥𝐞𝐓𝐕
+ - RULE-SET,Global,🚀 𝐏𝐫𝐨𝐱𝐲
+ - RULE-SET,CCC-Global,🚀 𝐏𝐫𝐨𝐱𝐲
+ - RULE-SET,ChinaMaxNoIP,🎯 𝐃𝐢𝐫𝐞𝐜𝐭
+ - RULE-SET,CCC-CN,🎯 𝐃𝐢𝐫𝐞𝐜𝐭
+ - RULE-SET,Download.list,🎯 𝐃𝐢𝐫𝐞𝐜𝐭
  - GEOIP,CN,🎯 全球直连
  - MATCH,🐟 漏网之鱼
-
