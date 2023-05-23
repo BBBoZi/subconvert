@@ -30,7 +30,7 @@ proxy-providers:
       enable: true
       interval: 300
       # lazy: true
-      url: http://www.gstatic.com/generate_204
+      url: "http://www.gstatic.com/generate_204"
 
   SG:
     type: http
@@ -42,7 +42,7 @@ proxy-providers:
       enable: true
       interval: 300
       # lazy: true
-      url: http://www.gstatic.com/generate_204
+      url: "http://www.gstatic.com/generate_204"
 
   US:
     type: http
@@ -54,7 +54,7 @@ proxy-providers:
       enable: true
       interval: 300
       # lazy: true
-      url: http://www.gstatic.com/generate_204
+      url: "http://www.gstatic.com/generate_204"
 
   TW:
     type: http
@@ -66,7 +66,7 @@ proxy-providers:
       enable: true
       interval: 300
       # lazy: true
-      url: http://www.gstatic.com/generate_204
+      url: "http://www.gstatic.com/generate_204"
 
   JP:
     type: http
@@ -78,19 +78,19 @@ proxy-providers:
       enable: true
       interval: 300
       # lazy: true
-      url: http://www.gstatic.com/generate_204
+      url: "http://www.gstatic.com/generate_204"
 
   Others:
     type: http
     url: ""
-    filter: "韩国|菲律宾|土耳其|德国|英国|澳大利亚|阿根廷|巴西|波兰|墨西哥|意大利|摩尔多瓦|加拿大|乌兹别克斯坦|防失联"
+    filter: "加拿大|越南|马来西亚|泰国|印度|菲律宾|印尼|澳大利亚|德国|法国|瑞士|英国|波兰|意大利|摩尔多瓦|乌克兰|埃及|巴基斯坦|乌兹别克斯坦|土耳其|阿根廷|巴西|墨西哥|智利"
     interval: 3600
     path: ./profiles/proxies/Others.yaml
     health-check:
       enable: true
       interval: 300
       # lazy: true
-      url: http://www.gstatic.com/generate_204
+      url: "http://www.gstatic.com/generate_204"
 
 proxy-groups:
   - name: 🚀 𝐏𝐫𝐨𝐱𝐲
@@ -462,35 +462,35 @@ proxy-groups:
 
   - name: 🇭🇰 𝑯𝑲
     type: url-test
-    url: http://www.gstatic.com/generate_204
+    url: "http://www.gstatic.com/generate_204"
     interval: 300
     tolerance: 5
     use:
       - HK
   - name: 🇯🇵 𝑱𝑷
     type: url-test
-    url: http://www.gstatic.com/generate_204
+    url: "http://www.gstatic.com/generate_204"
     interval: 300
     tolerance: 15
     use:
       - JP
   - name: 🇺🇲 𝑼𝑺
     type: url-test
-    url: http://www.gstatic.com/generate_204
+    url: "http://www.gstatic.com/generate_204"
     interval: 300
     tolerance: 15
     use:
       - US
   - name: 🇨🇳 𝑻𝑾
     type: url-test
-    url: http://www.gstatic.com/generate_204
+    url: "http://www.gstatic.com/generate_204"
     interval: 300
     tolerance: 15
     use:
       - TW
   - name: 🇸🇬 𝑺𝑮
     type: url-test
-    url: http://www.gstatic.com/generate_204
+    url: "http://www.gstatic.com/generate_204"
     interval: 300
     tolerance: 15
     use:
@@ -562,7 +562,7 @@ rule-providers:
 
   TeamViewer-CIDR:
     type: http
-    behavior: ipcidr
+    behavior: classical
     url: "https://cdn.jsdelivr.net/gh/LM-Firefly/Rules@master/Clash-RuleSet-Classical/Special/TeamViewer-CIDR.yaml"
     path: ./profiles/ruleset/TeamViewer-CIDR.yaml
     interval: 86400
