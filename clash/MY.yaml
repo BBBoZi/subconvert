@@ -127,10 +127,9 @@ proxy-groups:
       - 🇺🇲 𝑼𝑺
       - 🇨🇳 𝑻𝑾
       - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+      - DIRECT
     use:
       - Others
-    proxies:
-      - DIRECT
 
   - name: 🅿️ 𝐏𝐚𝐲𝐏𝐚𝐥
     type: select
@@ -151,10 +150,9 @@ proxy-groups:
       - 🇺🇲 𝑼𝑺
       - 🇨🇳 𝑻𝑾
       - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+      - DIRECT
     use:
       - Others
-    proxies:
-      - DIRECT
 
   - name: 📹 𝐘𝐨𝐮𝐓𝐮𝐛𝐞
     type: select
@@ -166,10 +164,9 @@ proxy-groups:
       - 🇺🇲 𝑼𝑺
       - 🇨🇳 𝑻𝑾
       - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+      - DIRECT
     use:
       - Others
-    proxies:
-      - DIRECT
 
   - name: 📺 𝐍𝐞𝐭𝐟𝐥𝐢𝐱
     type: select
@@ -181,10 +178,9 @@ proxy-groups:
       - 🇺🇲 𝑼𝑺
       - 🇨🇳 𝑻𝑾
       - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+      - DIRECT
     use:
       - Others
-    proxies:
-      - DIRECT
 
   - name: 🍿 𝐃𝐢𝐬𝐧𝐞𝐲𝐏𝐥𝐮𝐬
     type: select
@@ -196,10 +192,9 @@ proxy-groups:
       - 🇺🇲 𝑼𝑺
       - 🇨🇳 𝑻𝑾
       - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+      - DIRECT
     use:
       - Others
-    proxies:
-      - DIRECT
 
   - name: 🎬 𝐏𝐫𝐢𝐦𝐞𝐕𝐢𝐝𝐞𝐨
     type: select
@@ -211,10 +206,9 @@ proxy-groups:
       - 🇺🇲 𝑼𝑺
       - 🇨🇳 𝑻𝑾
       - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+      - DIRECT
     use:
       - Others
-    proxies:
-      - DIRECT
 
   - name: 📽️ 𝐇𝐁𝐎𝐆𝐎
     type: select
@@ -226,10 +220,9 @@ proxy-groups:
       - 🇺🇲 𝑼𝑺
       - 🇨🇳 𝑻𝑾
       - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+      - DIRECT
     use:
       - Others
-    proxies:
-      - DIRECT
 
   - name: 🎥 𝐇𝐁𝐎𝐌𝐀𝐗
     type: select
@@ -241,10 +234,9 @@ proxy-groups:
       - 🇯🇵 𝑱𝑷
       - 🇨🇳 𝑻𝑾
       - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+      - DIRECT
     use:
       - Others
-    proxies:
-      - DIRECT
 
   - name: 🍏 𝐀𝐩𝐩𝐥𝐞𝐓𝐕
     type: select
@@ -256,20 +248,18 @@ proxy-groups:
       - 🇯🇵 𝑱𝑷
       - 🇨🇳 𝑻𝑾
       - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+      - DIRECT
     use:
       - Others
-    proxies:
-      - DIRECT
 
   - name: 👾 𝐁𝐚𝐡𝐚𝐦𝐮𝐭
     type: select
     proxies:
       - 🇨🇳 𝑻𝑾
       - 🚀 𝐏𝐫𝐨𝐱𝐲
+      - DIRECT
     use:
       - TW
-    proxies:
-      - DIRECT
 
   - name: 🎵 𝐓𝐢𝐤𝐓𝐨𝐤
     type: select
@@ -281,10 +271,9 @@ proxy-groups:
       - 🇸🇬 𝑺𝑮
       - 🇨🇳 𝑻𝑾
       - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+      - DIRECT
     use:
       - Others
-    proxies:
-      - DIRECT
 
   - name: 🎶 𝐒𝐩𝐨𝐭𝐢𝐟𝐲
     type: select
@@ -296,10 +285,9 @@ proxy-groups:
       - 🇯🇵 𝑱𝑷
       - 🇨🇳 𝑻𝑾
       - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+      - DIRECT
     use:
       - Others
-    proxies:
-      - DIRECT
 
   - name: 🔞 𝐏𝐨𝐫𝐧𝐖𝐞𝐛
     type: select
@@ -311,11 +299,10 @@ proxy-groups:
       - 🇺🇲 𝑼𝑺
       - 🇨🇳 𝑻𝑾
       - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
-    use:
-      - Others
-    proxies:
       - DIRECT
       - REJECT
+    use:
+      - Others
 
   - name: 🌍 𝐆𝐥𝐨𝐛𝐥𝐞𝐓𝐕
     type: select
@@ -327,10 +314,9 @@ proxy-groups:
       - 🇺🇲 𝑼𝑺
       - 🇨🇳 𝑻𝑾
       - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+      - DIRECT
     use:
       - Others
-    proxies:
-      - DIRECT
 
   - name: 🛰️ 𝐎𝐭𝐡𝐞𝐫𝐈𝐏𝐓𝐕
     type: select
@@ -342,10 +328,9 @@ proxy-groups:
       - 🇺🇲 𝑼𝑺
       - 🇨🇳 𝑻𝑾
       - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+      - DIRECT
     use:
       - Others
-    proxies:
-      - DIRECT
 
   - name: 📡 𝐂𝐡𝐢𝐧𝐚𝐈𝐏𝐓𝐕
     type: select
@@ -371,10 +356,9 @@ proxy-groups:
       - 🇺🇲 𝑼𝑺
       - 🇨🇳 𝑻𝑾
       - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+      - DIRECT
     use:
       - Others
-    proxies:
-      - DIRECT
 
   - name: 🍎 𝐀𝐩𝐩𝐥𝐞
     type: select
@@ -469,6 +453,7 @@ proxy-groups:
       - 🇺🇲 𝑼𝑺
       - 🇨🇳 𝑻𝑾
       - 📍 𝐒𝐞𝐥𝐞𝐜𝐭
+      - DIRECT
     use:
       - HK
       - SG
@@ -476,8 +461,6 @@ proxy-groups:
       - TW
       - JP
       - Others
-    proxies:
-      - DIRECT
 
   - name: 🇭🇰 𝑯𝑲
     type: url-test
