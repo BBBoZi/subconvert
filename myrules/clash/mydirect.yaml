@@ -24,3 +24,5 @@ payload:
   - DOMAIN-SUFFIX,pc521.net
   - DOMAIN-SUFFIX,apad.pro
   - DOMAIN-SUFFIX,vvpgwg.xyz
+  - DOMAIN-SUFFIX,parsec.app
+  - PROCESS-NAME,parsec.exe
